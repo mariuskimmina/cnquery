@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -35,7 +35,7 @@ func Init(registry *resources.Registry) {
 
 // Oci resource interface
 type Oci interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -225,7 +225,7 @@ func (s *mqlOci) ComputeCompartments() error {
 
 // OciTenancy resource interface
 type OciTenancy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -465,7 +465,7 @@ func (s *mqlOciTenancy) ComputeRetentionPeriod() error {
 
 // OciRegion resource interface
 type OciRegion interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -678,7 +678,7 @@ func (s *mqlOciRegion) MqlCompute(name string) error {
 
 // OciCompartment resource interface
 type OciCompartment interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -921,7 +921,7 @@ func (s *mqlOciCompartment) MqlCompute(name string) error {
 
 // OciIdentity resource interface
 type OciIdentity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1159,7 +1159,7 @@ func (s *mqlOciIdentity) ComputePolicies() error {
 
 // OciIdentityUser resource interface
 type OciIdentityUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1804,7 +1804,7 @@ func (s *mqlOciIdentityUser) ComputeGroups() error {
 
 // OciIdentityApiKey resource interface
 type OciIdentityApiKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2047,7 +2047,7 @@ func (s *mqlOciIdentityApiKey) MqlCompute(name string) error {
 
 // OciIdentityCustomerSecretKey resource interface
 type OciIdentityCustomerSecretKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2260,7 +2260,7 @@ func (s *mqlOciIdentityCustomerSecretKey) MqlCompute(name string) error {
 
 // OciIdentityAuthToken resource interface
 type OciIdentityAuthToken interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2503,7 +2503,7 @@ func (s *mqlOciIdentityAuthToken) MqlCompute(name string) error {
 
 // OciIdentityGroup resource interface
 type OciIdentityGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2776,7 +2776,7 @@ func (s *mqlOciIdentityGroup) MqlCompute(name string) error {
 
 // OciIdentityPolicy resource interface
 type OciIdentityPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3079,7 +3079,7 @@ func (s *mqlOciIdentityPolicy) MqlCompute(name string) error {
 
 // OciCompute resource interface
 type OciCompute interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3269,7 +3269,7 @@ func (s *mqlOciCompute) ComputeImages() error {
 
 // OciComputeInstance resource interface
 type OciComputeInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3512,7 +3512,7 @@ func (s *mqlOciComputeInstance) MqlCompute(name string) error {
 
 // OciComputeImage resource interface
 type OciComputeImage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3755,7 +3755,7 @@ func (s *mqlOciComputeImage) MqlCompute(name string) error {
 
 // OciNetwork resource interface
 type OciNetwork interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3945,7 +3945,7 @@ func (s *mqlOciNetwork) ComputeSecurityLists() error {
 
 // OciNetworkVcn resource interface
 type OciNetworkVcn interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4248,7 +4248,7 @@ func (s *mqlOciNetworkVcn) MqlCompute(name string) error {
 
 // OciNetworkSecurityList resource interface
 type OciNetworkSecurityList interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4551,7 +4551,7 @@ func (s *mqlOciNetworkSecurityList) MqlCompute(name string) error {
 
 // OciObjectStorage resource interface
 type OciObjectStorage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4741,7 +4741,7 @@ func (s *mqlOciObjectStorage) ComputeBuckets() error {
 
 // OciObjectStorageBucket resource interface
 type OciObjectStorageBucket interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5269,4 +5269,3 @@ func (s *mqlOciObjectStorageBucket) ComputeReplicationEnabled() error {
 	s.Cache.Store("replicationEnabled", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -30,7 +30,7 @@ func Init(registry *resources.Registry) {
 
 // Terraform resource interface
 type Terraform interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -556,7 +556,7 @@ func (s *mqlTerraform) ComputeOutputs() error {
 
 // TerraformFile resource interface
 type TerraformFile interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -727,7 +727,7 @@ func (s *mqlTerraformFile) ComputeBlocks() error {
 
 // TerraformFileposition resource interface
 type TerraformFileposition interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -940,7 +940,7 @@ func (s *mqlTerraformFileposition) MqlCompute(name string) error {
 
 // TerraformBlock resource interface
 type TerraformBlock interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1375,7 +1375,7 @@ func (s *mqlTerraformBlock) ComputeBlocks() error {
 
 // TerraformModule resource interface
 type TerraformModule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1636,7 +1636,7 @@ func (s *mqlTerraformModule) ComputeBlock() error {
 
 // TerraformSettings resource interface
 type TerraformSettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1798,7 +1798,7 @@ func (s *mqlTerraformSettings) MqlCompute(name string) error {
 
 // TerraformState resource interface
 type TerraformState interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2152,7 +2152,7 @@ func (s *mqlTerraformState) ComputeResources() error {
 
 // TerraformStateOutput resource interface
 type TerraformStateOutput interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2410,7 +2410,7 @@ func (s *mqlTerraformStateOutput) ComputeType() error {
 
 // TerraformStateModule resource interface
 type TerraformStateModule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2638,7 +2638,7 @@ func (s *mqlTerraformStateModule) ComputeChildModules() error {
 
 // TerraformStateResource resource interface
 type TerraformStateResource interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3031,7 +3031,7 @@ func (s *mqlTerraformStateResource) MqlCompute(name string) error {
 
 // TerraformPlan resource interface
 type TerraformPlan interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3241,7 +3241,7 @@ func (s *mqlTerraformPlan) ComputeResourceChanges() error {
 
 // TerraformPlanConfiguration resource interface
 type TerraformPlanConfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3431,7 +3431,7 @@ func (s *mqlTerraformPlanConfiguration) ComputeResources() error {
 
 // TerraformPlanResourceChange resource interface
 type TerraformPlanResourceChange interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3824,7 +3824,7 @@ func (s *mqlTerraformPlanResourceChange) MqlCompute(name string) error {
 
 // TerraformPlanProposedChange resource interface
 type TerraformPlanProposedChange interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4154,4 +4154,3 @@ func (s *mqlTerraformPlanProposedChange) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"terraform.plan.proposedChange\" resource")
 	}
 }
-

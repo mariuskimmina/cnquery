@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 	"go.mondoo.com/cnquery/resources/packs/core"
 )
 
@@ -135,7 +135,7 @@ func Init(registry *resources.Registry) {
 
 // Aws resource interface
 type Aws interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -325,7 +325,7 @@ func (s *mqlAws) ComputeRegions() error {
 
 // AwsAccessAnalyzer resource interface
 type AwsAccessAnalyzer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -467,7 +467,7 @@ func (s *mqlAwsAccessAnalyzer) ComputeAnalyzers() error {
 
 // AwsAccessanalyzerAnalyzer resource interface
 type AwsAccessanalyzerAnalyzer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -710,7 +710,7 @@ func (s *mqlAwsAccessanalyzerAnalyzer) MqlCompute(name string) error {
 
 // AwsAccount resource interface
 type AwsAccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -948,7 +948,7 @@ func (s *mqlAwsAccount) ComputeOrganization() error {
 
 // AwsOrganization resource interface
 type AwsOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1161,7 +1161,7 @@ func (s *mqlAwsOrganization) MqlCompute(name string) error {
 
 // AwsEfs resource interface
 type AwsEfs interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1303,7 +1303,7 @@ func (s *mqlAwsEfs) ComputeFilesystems() error {
 
 // AwsEfsFilesystem resource interface
 type AwsEfsFilesystem interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1681,7 +1681,7 @@ func (s *mqlAwsEfsFilesystem) ComputeBackupPolicy() error {
 
 // AwsIam resource interface
 type AwsIam interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2255,7 +2255,7 @@ func (s *mqlAwsIam) ComputeServerCertificates() error {
 
 // AwsIamUsercredentialreportentry resource interface
 type AwsIamUsercredentialreportentry interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3434,7 +3434,7 @@ func (s *mqlAwsIamUsercredentialreportentry) ComputeUserCreationTime() error {
 
 // AwsIamUser resource interface
 type AwsIamUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3908,7 +3908,7 @@ func (s *mqlAwsIamUser) ComputeAccessKeys() error {
 
 // AwsIamPolicy resource interface
 type AwsIamPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4655,7 +4655,7 @@ func (s *mqlAwsIamPolicy) ComputeAttachedGroups() error {
 
 // AwsIamPolicyversion resource interface
 type AwsIamPolicyversion interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4916,7 +4916,7 @@ func (s *mqlAwsIamPolicyversion) ComputeDocument() error {
 
 // AwsIamRole resource interface
 type AwsIamRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5198,7 +5198,7 @@ func (s *mqlAwsIamRole) MqlCompute(name string) error {
 
 // AwsIamGroup resource interface
 type AwsIamGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5450,7 +5450,7 @@ func (s *mqlAwsIamGroup) MqlCompute(name string) error {
 
 // AwsIamVirtualmfadevice resource interface
 type AwsIamVirtualmfadevice interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5633,7 +5633,7 @@ func (s *mqlAwsIamVirtualmfadevice) MqlCompute(name string) error {
 
 // AwsSagemaker resource interface
 type AwsSagemaker interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5823,7 +5823,7 @@ func (s *mqlAwsSagemaker) ComputeNotebookInstances() error {
 
 // AwsSagemakerNotebookinstance resource interface
 type AwsSagemakerNotebookinstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6093,7 +6093,7 @@ func (s *mqlAwsSagemakerNotebookinstance) ComputeDetails() error {
 
 // AwsSagemakerNotebookinstanceDetails resource interface
 type AwsSagemakerNotebookinstanceDetails interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6276,7 +6276,7 @@ func (s *mqlAwsSagemakerNotebookinstanceDetails) MqlCompute(name string) error {
 
 // AwsSagemakerEndpoint resource interface
 type AwsSagemakerEndpoint interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6537,7 +6537,7 @@ func (s *mqlAwsSagemakerEndpoint) ComputeConfig() error {
 
 // AwsSns resource interface
 type AwsSns interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6679,7 +6679,7 @@ func (s *mqlAwsSns) ComputeTopics() error {
 
 // AwsSnsTopic resource interface
 type AwsSnsTopic interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6985,7 +6985,7 @@ func (s *mqlAwsSnsTopic) ComputeTags() error {
 
 // AwsSnsSubscription resource interface
 type AwsSnsSubscription interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7138,7 +7138,7 @@ func (s *mqlAwsSnsSubscription) MqlCompute(name string) error {
 
 // AwsEs resource interface
 type AwsEs interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7280,7 +7280,7 @@ func (s *mqlAwsEs) ComputeDomains() error {
 
 // AwsEsDomain resource interface
 type AwsEsDomain interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7592,7 +7592,7 @@ func (s *mqlAwsEsDomain) MqlCompute(name string) error {
 
 // AwsAcm resource interface
 type AwsAcm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7734,7 +7734,7 @@ func (s *mqlAwsAcm) ComputeCertificates() error {
 
 // AwsAcmCertificate resource interface
 type AwsAcmCertificate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8124,7 +8124,7 @@ func (s *mqlAwsAcmCertificate) ComputeCertificate() error {
 
 // AwsAutoscaling resource interface
 type AwsAutoscaling interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8266,7 +8266,7 @@ func (s *mqlAwsAutoscaling) ComputeGroups() error {
 
 // AwsAutoscalingGroup resource interface
 type AwsAutoscalingGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8509,7 +8509,7 @@ func (s *mqlAwsAutoscalingGroup) MqlCompute(name string) error {
 
 // AwsElb resource interface
 type AwsElb interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8699,7 +8699,7 @@ func (s *mqlAwsElb) ComputeLoadBalancers() error {
 
 // AwsElbLoadbalancer resource interface
 type AwsElbLoadbalancer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9017,7 +9017,7 @@ func (s *mqlAwsElbLoadbalancer) ComputeAttributes() error {
 
 // AwsCodebuild resource interface
 type AwsCodebuild interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9159,7 +9159,7 @@ func (s *mqlAwsCodebuild) ComputeProjects() error {
 
 // AwsCodebuildProject resource interface
 type AwsCodebuildProject interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9471,7 +9471,7 @@ func (s *mqlAwsCodebuildProject) MqlCompute(name string) error {
 
 // AwsGuardduty resource interface
 type AwsGuardduty interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9613,7 +9613,7 @@ func (s *mqlAwsGuardduty) ComputeDetectors() error {
 
 // AwsGuarddutyDetector resource interface
 type AwsGuarddutyDetector interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9883,7 +9883,7 @@ func (s *mqlAwsGuarddutyDetector) ComputeUnarchivedFindings() error {
 
 // AwsSecurityhub resource interface
 type AwsSecurityhub interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10025,7 +10025,7 @@ func (s *mqlAwsSecurityhub) ComputeHubs() error {
 
 // AwsSecurityhubHub resource interface
 type AwsSecurityhubHub interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10178,7 +10178,7 @@ func (s *mqlAwsSecurityhubHub) MqlCompute(name string) error {
 
 // AwsSecretsmanager resource interface
 type AwsSecretsmanager interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10320,7 +10320,7 @@ func (s *mqlAwsSecretsmanager) ComputeSecrets() error {
 
 // AwsSecretsmanagerSecret resource interface
 type AwsSecretsmanagerSecret interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10533,7 +10533,7 @@ func (s *mqlAwsSecretsmanagerSecret) MqlCompute(name string) error {
 
 // AwsEcs resource interface
 type AwsEcs interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10771,7 +10771,7 @@ func (s *mqlAwsEcs) ComputeContainerInstances() error {
 
 // AwsEcsCluster resource interface
 type AwsEcsCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11209,7 +11209,7 @@ func (s *mqlAwsEcsCluster) ComputeContainerInstances() error {
 
 // AwsEcsInstance resource interface
 type AwsEcsInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11500,7 +11500,7 @@ func (s *mqlAwsEcsInstance) ComputeEc2Instance() error {
 
 // AwsEcsTask resource interface
 type AwsEcsTask interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11842,7 +11842,7 @@ func (s *mqlAwsEcsTask) MqlCompute(name string) error {
 
 // AwsEcsContainer resource interface
 type AwsEcsContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12394,7 +12394,7 @@ func (s *mqlAwsEcsContainer) MqlCompute(name string) error {
 
 // AwsEmr resource interface
 type AwsEmr interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12536,7 +12536,7 @@ func (s *mqlAwsEmr) ComputeClusters() error {
 
 // AwsEmrCluster resource interface
 type AwsEmrCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12887,7 +12887,7 @@ func (s *mqlAwsEmrCluster) ComputeMasterInstances() error {
 
 // AwsCloudwatch resource interface
 type AwsCloudwatch interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13125,7 +13125,7 @@ func (s *mqlAwsCloudwatch) ComputeMetrics() error {
 
 // AwsCloudwatchMetricsalarm resource interface
 type AwsCloudwatchMetricsalarm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13527,7 +13527,7 @@ func (s *mqlAwsCloudwatchMetricsalarm) MqlCompute(name string) error {
 
 // AwsCloudwatchMetric resource interface
 type AwsCloudwatchMetric interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13863,7 +13863,7 @@ func (s *mqlAwsCloudwatchMetric) ComputeStatistics() error {
 
 // AwsCloudwatchMetricdimension resource interface
 type AwsCloudwatchMetricdimension interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14016,7 +14016,7 @@ func (s *mqlAwsCloudwatchMetricdimension) MqlCompute(name string) error {
 
 // AwsCloudwatchMetricstatistics resource interface
 type AwsCloudwatchMetricstatistics interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14268,7 +14268,7 @@ func (s *mqlAwsCloudwatchMetricstatistics) MqlCompute(name string) error {
 
 // AwsCloudwatchMetricDatapoint resource interface
 type AwsCloudwatchMetricDatapoint interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14571,7 +14571,7 @@ func (s *mqlAwsCloudwatchMetricDatapoint) MqlCompute(name string) error {
 
 // AwsCloudwatchLoggroup resource interface
 type AwsCloudwatchLoggroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14859,7 +14859,7 @@ func (s *mqlAwsCloudwatchLoggroup) ComputeKmsKey() error {
 
 // AwsCloudwatchLoggroupMetricsfilter resource interface
 type AwsCloudwatchLoggroupMetricsfilter interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15072,7 +15072,7 @@ func (s *mqlAwsCloudwatchLoggroupMetricsfilter) MqlCompute(name string) error {
 
 // AwsCloudtrail resource interface
 type AwsCloudtrail interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15214,7 +15214,7 @@ func (s *mqlAwsCloudtrail) ComputeTrails() error {
 
 // AwsCloudfront resource interface
 type AwsCloudfront interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15404,7 +15404,7 @@ func (s *mqlAwsCloudfront) ComputeFunctions() error {
 
 // AwsCloudfrontDistribution resource interface
 type AwsCloudfrontDistribution interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15677,7 +15677,7 @@ func (s *mqlAwsCloudfrontDistribution) MqlCompute(name string) error {
 
 // AwsCloudfrontDistributionOrigin resource interface
 type AwsCloudfrontDistributionOrigin interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15950,7 +15950,7 @@ func (s *mqlAwsCloudfrontDistributionOrigin) MqlCompute(name string) error {
 
 // AwsCloudfrontFunction resource interface
 type AwsCloudfrontFunction interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16283,7 +16283,7 @@ func (s *mqlAwsCloudfrontFunction) MqlCompute(name string) error {
 
 // AwsCloudtrailTrail resource interface
 type AwsCloudtrailTrail interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16895,7 +16895,7 @@ func (s *mqlAwsCloudtrailTrail) ComputeEventSelectors() error {
 
 // AwsKms resource interface
 type AwsKms interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17037,7 +17037,7 @@ func (s *mqlAwsKms) ComputeKeys() error {
 
 // AwsKmsKey resource interface
 type AwsKmsKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17325,7 +17325,7 @@ func (s *mqlAwsKmsKey) ComputeMetadata() error {
 
 // AwsS3 resource interface
 type AwsS3 interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17467,7 +17467,7 @@ func (s *mqlAwsS3) ComputeBuckets() error {
 
 // AwsS3control resource interface
 type AwsS3control interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17609,7 +17609,7 @@ func (s *mqlAwsS3control) ComputeAccountPublicAccessBlock() error {
 
 // AwsS3Bucket resource interface
 type AwsS3Bucket interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18473,7 +18473,7 @@ func (s *mqlAwsS3Bucket) ComputePublicAccessBlock() error {
 
 // AwsS3BucketGrant resource interface
 type AwsS3BucketGrant interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18686,7 +18686,7 @@ func (s *mqlAwsS3BucketGrant) MqlCompute(name string) error {
 
 // AwsS3BucketCorsrule resource interface
 type AwsS3BucketCorsrule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18959,7 +18959,7 @@ func (s *mqlAwsS3BucketCorsrule) MqlCompute(name string) error {
 
 // AwsS3BucketPolicy resource interface
 type AwsS3BucketPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19256,7 +19256,7 @@ func (s *mqlAwsS3BucketPolicy) ComputeStatements() error {
 
 // AwsApplicationAutoscaling resource interface
 type AwsApplicationAutoscaling interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19427,7 +19427,7 @@ func (s *mqlAwsApplicationAutoscaling) ComputeScalableTargets() error {
 
 // AwsApplicationautoscalingTarget resource interface
 type AwsApplicationautoscalingTarget interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19700,7 +19700,7 @@ func (s *mqlAwsApplicationautoscalingTarget) MqlCompute(name string) error {
 
 // AwsBackup resource interface
 type AwsBackup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19842,7 +19842,7 @@ func (s *mqlAwsBackup) ComputeVaults() error {
 
 // AwsBackupVault resource interface
 type AwsBackupVault interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20043,7 +20043,7 @@ func (s *mqlAwsBackupVault) ComputeRecoveryPoints() error {
 
 // AwsBackupVaultRecoveryPoint resource interface
 type AwsBackupVaultRecoveryPoint interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20406,7 +20406,7 @@ func (s *mqlAwsBackupVaultRecoveryPoint) MqlCompute(name string) error {
 
 // AwsDynamodb resource interface
 type AwsDynamodb interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20692,7 +20692,7 @@ func (s *mqlAwsDynamodb) ComputeLimits() error {
 
 // AwsDynamodbLimit resource interface
 type AwsDynamodbLimit interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20965,7 +20965,7 @@ func (s *mqlAwsDynamodbLimit) MqlCompute(name string) error {
 
 // AwsDynamodbGlobaltable resource interface
 type AwsDynamodbGlobaltable interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21175,7 +21175,7 @@ func (s *mqlAwsDynamodbGlobaltable) ComputeReplicaSettings() error {
 
 // AwsDynamodbTable resource interface
 type AwsDynamodbTable interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21571,7 +21571,7 @@ func (s *mqlAwsDynamodbTable) ComputeTags() error {
 
 // AwsRds resource interface
 type AwsRds interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21761,7 +21761,7 @@ func (s *mqlAwsRds) ComputeDbClusters() error {
 
 // AwsRdsDbcluster resource interface
 type AwsRdsDbcluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22052,7 +22052,7 @@ func (s *mqlAwsRdsDbcluster) ComputeSnapshots() error {
 
 // AwsRdsSnapshot resource interface
 type AwsRdsSnapshot interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22403,7 +22403,7 @@ func (s *mqlAwsRdsSnapshot) ComputeAttributes() error {
 
 // AwsRdsDbinstance resource interface
 type AwsRdsDbinstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23063,7 +23063,7 @@ func (s *mqlAwsRdsDbinstance) ComputeSnapshots() error {
 
 // AwsElasticache resource interface
 type AwsElasticache interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23253,7 +23253,7 @@ func (s *mqlAwsElasticache) ComputeCacheClusters() error {
 
 // AwsElasticacheCluster resource interface
 type AwsElasticacheCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24156,7 +24156,7 @@ func (s *mqlAwsElasticacheCluster) MqlCompute(name string) error {
 
 // AwsRedshift resource interface
 type AwsRedshift interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24298,7 +24298,7 @@ func (s *mqlAwsRedshift) ComputeClusters() error {
 
 // AwsRedshiftCluster resource interface
 type AwsRedshiftCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24826,7 +24826,7 @@ func (s *mqlAwsRedshiftCluster) ComputeLogging() error {
 
 // AwsEcr resource interface
 type AwsEcr interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25064,7 +25064,7 @@ func (s *mqlAwsEcr) ComputeImages() error {
 
 // AwsEcrRepository resource interface
 type AwsEcrRepository interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25385,7 +25385,7 @@ func (s *mqlAwsEcrRepository) ComputeImages() error {
 
 // AwsEcrImage resource interface
 type AwsEcrImage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25727,7 +25727,7 @@ func (s *mqlAwsEcrImage) MqlCompute(name string) error {
 
 // AwsDms resource interface
 type AwsDms interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25869,7 +25869,7 @@ func (s *mqlAwsDms) ComputeReplicationInstances() error {
 
 // AwsApigateway resource interface
 type AwsApigateway interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26011,7 +26011,7 @@ func (s *mqlAwsApigateway) ComputeRestApis() error {
 
 // AwsApigatewayRestapi resource interface
 type AwsApigatewayRestapi interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26371,7 +26371,7 @@ func (s *mqlAwsApigatewayRestapi) ComputeStages() error {
 
 // AwsApigatewayStage resource interface
 type AwsApigatewayStage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26644,7 +26644,7 @@ func (s *mqlAwsApigatewayStage) MqlCompute(name string) error {
 
 // AwsLambda resource interface
 type AwsLambda interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26786,7 +26786,7 @@ func (s *mqlAwsLambda) ComputeFunctions() error {
 
 // AwsLambdaFunction resource interface
 type AwsLambdaFunction interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27164,7 +27164,7 @@ func (s *mqlAwsLambdaFunction) ComputePolicy() error {
 
 // AwsSsm resource interface
 type AwsSsm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27306,7 +27306,7 @@ func (s *mqlAwsSsm) ComputeInstances() error {
 
 // AwsSsmInstance resource interface
 type AwsSsmInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27636,7 +27636,7 @@ func (s *mqlAwsSsmInstance) ComputeTags() error {
 
 // AwsEc2 resource interface
 type AwsEc2 interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28162,7 +28162,7 @@ func (s *mqlAwsEc2) ComputeKeypairs() error {
 
 // AwsEc2Networkacl resource interface
 type AwsEc2Networkacl interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28393,7 +28393,7 @@ func (s *mqlAwsEc2Networkacl) ComputeEntries() error {
 
 // AwsEc2NetworkaclEntry resource interface
 type AwsEc2NetworkaclEntry interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28624,7 +28624,7 @@ func (s *mqlAwsEc2NetworkaclEntry) ComputePortRange() error {
 
 // AwsEc2NetworkaclEntryPortrange resource interface
 type AwsEc2NetworkaclEntryPortrange interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28807,7 +28807,7 @@ func (s *mqlAwsEc2NetworkaclEntryPortrange) MqlCompute(name string) error {
 
 // AwsEc2Vpnconnection resource interface
 type AwsEc2Vpnconnection interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28960,7 +28960,7 @@ func (s *mqlAwsEc2Vpnconnection) MqlCompute(name string) error {
 
 // AwsEc2Vgwtelemetry resource interface
 type AwsEc2Vgwtelemetry interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29143,7 +29143,7 @@ func (s *mqlAwsEc2Vgwtelemetry) MqlCompute(name string) error {
 
 // AwsEc2Internetgateway resource interface
 type AwsEc2Internetgateway interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29326,7 +29326,7 @@ func (s *mqlAwsEc2Internetgateway) MqlCompute(name string) error {
 
 // AwsEc2Snapshot resource interface
 type AwsEc2Snapshot interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29686,7 +29686,7 @@ func (s *mqlAwsEc2Snapshot) ComputeCreateVolumePermission() error {
 
 // AwsEc2Volume resource interface
 type AwsEc2Volume interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -30088,7 +30088,7 @@ func (s *mqlAwsEc2Volume) MqlCompute(name string) error {
 
 // AwsEc2Instance resource interface
 type AwsEc2Instance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31030,7 +31030,7 @@ func (s *mqlAwsEc2Instance) ComputeKeypair() error {
 
 // AwsEc2Keypair resource interface
 type AwsEc2Keypair interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31312,7 +31312,7 @@ func (s *mqlAwsEc2Keypair) MqlCompute(name string) error {
 
 // AwsEc2Image resource interface
 type AwsEc2Image interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31594,7 +31594,7 @@ func (s *mqlAwsEc2Image) MqlCompute(name string) error {
 
 // AwsEc2InstanceDevice resource interface
 type AwsEc2InstanceDevice interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31807,7 +31807,7 @@ func (s *mqlAwsEc2InstanceDevice) MqlCompute(name string) error {
 
 // AwsVpc resource interface
 type AwsVpc interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32185,7 +32185,7 @@ func (s *mqlAwsVpc) ComputeRouteTables() error {
 
 // AwsVpcFlowlog resource interface
 type AwsVpcFlowlog interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32428,7 +32428,7 @@ func (s *mqlAwsVpcFlowlog) MqlCompute(name string) error {
 
 // AwsVpcRoutetable resource interface
 type AwsVpcRoutetable interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32581,7 +32581,7 @@ func (s *mqlAwsVpcRoutetable) MqlCompute(name string) error {
 
 // AwsEc2Securitygroup resource interface
 type AwsEc2Securitygroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33001,7 +33001,7 @@ func (s *mqlAwsEc2Securitygroup) ComputeIsAttachedToNetworkInterface() error {
 
 // AwsEc2SecuritygroupIppermission resource interface
 type AwsEc2SecuritygroupIppermission interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33274,7 +33274,7 @@ func (s *mqlAwsEc2SecuritygroupIppermission) MqlCompute(name string) error {
 
 // AwsConfig resource interface
 type AwsConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33464,7 +33464,7 @@ func (s *mqlAwsConfig) ComputeRules() error {
 
 // AwsConfigRule resource interface
 type AwsConfigRule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33647,7 +33647,7 @@ func (s *mqlAwsConfigRule) MqlCompute(name string) error {
 
 // AwsConfigRecorder resource interface
 type AwsConfigRecorder interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33950,7 +33950,7 @@ func (s *mqlAwsConfigRecorder) MqlCompute(name string) error {
 
 // AwsEks resource interface
 type AwsEks interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34092,7 +34092,7 @@ func (s *mqlAwsEks) ComputeClusters() error {
 
 // AwsEksCluster resource interface
 type AwsEksCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34572,4 +34572,3 @@ func (s *mqlAwsEksCluster) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"aws.eks.cluster\" resource")
 	}
 }
-

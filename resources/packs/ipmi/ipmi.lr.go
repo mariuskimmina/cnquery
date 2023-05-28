@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -18,7 +18,7 @@ func Init(registry *resources.Registry) {
 
 // Ipmi resource interface
 type Ipmi interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -208,7 +208,7 @@ func (s *mqlIpmi) ComputeGuid() error {
 
 // IpmiChassis resource interface
 type IpmiChassis interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -395,4 +395,3 @@ func (s *mqlIpmiChassis) ComputeSystemBootOptions() error {
 	s.Cache.Store("systemBootOptions", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-

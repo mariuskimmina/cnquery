@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -29,7 +29,7 @@ func Init(registry *resources.Registry) {
 
 // Googleworkspace resource interface
 type Googleworkspace interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -411,7 +411,7 @@ func (s *mqlGoogleworkspace) ComputeConnectedApps() error {
 
 // GoogleworkspaceOrgUnit resource interface
 type GoogleworkspaceOrgUnit interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -594,7 +594,7 @@ func (s *mqlGoogleworkspaceOrgUnit) MqlCompute(name string) error {
 
 // GoogleworkspaceDomain resource interface
 type GoogleworkspaceDomain interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -807,7 +807,7 @@ func (s *mqlGoogleworkspaceDomain) MqlCompute(name string) error {
 
 // GoogleworkspaceUser resource interface
 type GoogleworkspaceUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1536,7 +1536,7 @@ func (s *mqlGoogleworkspaceUser) ComputeTokens() error {
 
 // GoogleworkspaceToken resource interface
 type GoogleworkspaceToken interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1809,7 +1809,7 @@ func (s *mqlGoogleworkspaceToken) MqlCompute(name string) error {
 
 // GoogleworkspaceConnectedApp resource interface
 type GoogleworkspaceConnectedApp interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2052,7 +2052,7 @@ func (s *mqlGoogleworkspaceConnectedApp) MqlCompute(name string) error {
 
 // GoogleworkspaceGroup resource interface
 type GoogleworkspaceGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2499,7 +2499,7 @@ func (s *mqlGoogleworkspaceGroup) ComputeSecuritySettings() error {
 
 // GoogleworkspaceMember resource interface
 type GoogleworkspaceMember interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2760,7 +2760,7 @@ func (s *mqlGoogleworkspaceMember) ComputeUser() error {
 
 // GoogleworkspaceRole resource interface
 type GoogleworkspaceRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3033,7 +3033,7 @@ func (s *mqlGoogleworkspaceRole) MqlCompute(name string) error {
 
 // GoogleworkspaceReportApps resource interface
 type GoogleworkspaceReportApps interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3175,7 +3175,7 @@ func (s *mqlGoogleworkspaceReportApps) ComputeDrive() error {
 
 // GoogleworkspaceReportActivity resource interface
 type GoogleworkspaceReportActivity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3418,7 +3418,7 @@ func (s *mqlGoogleworkspaceReportActivity) MqlCompute(name string) error {
 
 // GoogleworkspaceReportUsers resource interface
 type GoogleworkspaceReportUsers interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3560,7 +3560,7 @@ func (s *mqlGoogleworkspaceReportUsers) ComputeList() error {
 
 // GoogleworkspaceReportUsage resource interface
 type GoogleworkspaceReportUsage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4004,4 +4004,3 @@ func (s *mqlGoogleworkspaceReportUsage) ComputeAppUsage() error {
 	s.Cache.Store("appUsage", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-

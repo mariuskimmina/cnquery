@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -33,7 +33,7 @@ func Init(registry *resources.Registry) {
 
 // Vsphere resource interface
 type Vsphere interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -271,7 +271,7 @@ func (s *mqlVsphere) ComputeDatacenters() error {
 
 // VsphereLicense resource interface
 type VsphereLicense interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -454,7 +454,7 @@ func (s *mqlVsphereLicense) MqlCompute(name string) error {
 
 // Esxi resource interface
 type Esxi interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -644,7 +644,7 @@ func (s *mqlEsxi) ComputeVm() error {
 
 // VsphereDatacenter resource interface
 type VsphereDatacenter interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -971,7 +971,7 @@ func (s *mqlVsphereDatacenter) ComputeClusters() error {
 
 // VsphereCluster resource interface
 type VsphereCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1232,7 +1232,7 @@ func (s *mqlVsphereCluster) ComputeHosts() error {
 
 // VsphereHost resource interface
 type VsphereHost interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2030,7 +2030,7 @@ func (s *mqlVsphereHost) ComputeSnmp() error {
 
 // VsphereVm resource interface
 type VsphereVm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2291,7 +2291,7 @@ func (s *mqlVsphereVm) ComputeAdvancedSettings() error {
 
 // VsphereVswitchStandard resource interface
 type VsphereVswitchStandard interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2636,7 +2636,7 @@ func (s *mqlVsphereVswitchStandard) ComputeUplinks() error {
 
 // VsphereVswitchDvs resource interface
 type VsphereVswitchDvs interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2837,7 +2837,7 @@ func (s *mqlVsphereVswitchDvs) ComputeUplinks() error {
 
 // VsphereVmnic resource interface
 type VsphereVmnic interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3068,7 +3068,7 @@ func (s *mqlVsphereVmnic) ComputeDetails() error {
 
 // VsphereVmknic resource interface
 type VsphereVmknic interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3311,7 +3311,7 @@ func (s *mqlVsphereVmknic) MqlCompute(name string) error {
 
 // EsxiCommand resource interface
 type EsxiCommand interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3521,7 +3521,7 @@ func (s *mqlEsxiCommand) ComputeResult() error {
 
 // EsxiVib resource interface
 type EsxiVib interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3854,7 +3854,7 @@ func (s *mqlEsxiVib) MqlCompute(name string) error {
 
 // EsxiKernelmodule resource interface
 type EsxiKernelmodule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4247,7 +4247,7 @@ func (s *mqlEsxiKernelmodule) MqlCompute(name string) error {
 
 // EsxiService resource interface
 type EsxiService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4550,7 +4550,7 @@ func (s *mqlEsxiService) MqlCompute(name string) error {
 
 // EsxiTimezone resource interface
 type EsxiTimezone interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4763,7 +4763,7 @@ func (s *mqlEsxiTimezone) MqlCompute(name string) error {
 
 // EsxiNtpconfig resource interface
 type EsxiNtpconfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4943,4 +4943,3 @@ func (s *mqlEsxiNtpconfig) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"esxi.ntpconfig\" resource")
 	}
 }
-

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -71,7 +71,7 @@ func Init(registry *resources.Registry) {
 
 // Mondoo resource interface
 type Mondoo interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -453,7 +453,7 @@ func (s *mqlMondoo) ComputeNulllist() error {
 
 // MondooEol resource interface
 type MondooEol interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -654,7 +654,7 @@ func (s *mqlMondooEol) ComputeDate() error {
 
 // MondooAsset resource interface
 type MondooAsset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -796,7 +796,7 @@ func (s *mqlMondooAsset) ComputePlatformIDs() error {
 
 // Asset resource interface
 type Asset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1324,7 +1324,7 @@ func (s *mqlAsset) ComputeVulnerabilityReport() error {
 
 // File resource interface
 type File interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1897,7 +1897,7 @@ func (s *mqlFile) ComputeEmpty() error {
 
 // FilePermissions resource interface
 type FilePermissions interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2518,7 +2518,7 @@ func (s *mqlFilePermissions) ComputeString() error {
 
 // User resource interface
 type User interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2974,7 +2974,7 @@ func (s *mqlUser) ComputeGroup() error {
 
 // Users resource interface
 type Users interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3116,7 +3116,7 @@ func (s *mqlUsers) ComputeList() error {
 
 // Authorizedkeys resource interface
 type Authorizedkeys interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3408,7 +3408,7 @@ func (s *mqlAuthorizedkeys) ComputeList() error {
 
 // AuthorizedkeysEntry resource interface
 type AuthorizedkeysEntry interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3717,7 +3717,7 @@ func (s *mqlAuthorizedkeysEntry) ComputeOptions() error {
 
 // Group resource interface
 type Group interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3957,7 +3957,7 @@ func (s *mqlGroup) ComputeMembers() error {
 
 // Groups resource interface
 type Groups interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4099,7 +4099,7 @@ func (s *mqlGroups) ComputeList() error {
 
 // Parse resource interface
 type Parse interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4193,7 +4193,7 @@ func (s *mqlParse) MqlCompute(name string) error {
 
 // Time resource interface
 type Time interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4623,7 +4623,7 @@ func (s *mqlTime) ComputeTomorrow() error {
 
 // Regex resource interface
 type Regex interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5149,7 +5149,7 @@ func (s *mqlRegex) ComputeCreditCard() error {
 
 // ParseIni resource interface
 type ParseIni interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5510,7 +5510,7 @@ func (s *mqlParseIni) ComputeParams() error {
 
 // ParseJson resource interface
 type ParseJson interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5761,7 +5761,7 @@ func (s *mqlParseJson) ComputeParams() error {
 
 // ParsePlist resource interface
 type ParsePlist interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6012,7 +6012,7 @@ func (s *mqlParsePlist) ComputeParams() error {
 
 // ParseYaml resource interface
 type ParseYaml interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6263,7 +6263,7 @@ func (s *mqlParseYaml) ComputeParams() error {
 
 // Platform resource interface
 type Platform interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6773,7 +6773,7 @@ func (s *mqlPlatform) ComputeVulnerabilityReport() error {
 
 // PlatformVirtualization resource interface
 type PlatformVirtualization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6915,7 +6915,7 @@ func (s *mqlPlatformVirtualization) ComputeIsContainer() error {
 
 // PlatformEol resource interface
 type PlatformEol interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7107,7 +7107,7 @@ func (s *mqlPlatformEol) MqlCompute(name string) error {
 
 // PlatformAdvisories resource interface
 type PlatformAdvisories interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7345,7 +7345,7 @@ func (s *mqlPlatformAdvisories) ComputeList() error {
 
 // PlatformCves resource interface
 type PlatformCves interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7583,7 +7583,7 @@ func (s *mqlPlatformCves) ComputeList() error {
 
 // AuditCvss resource interface
 type AuditCvss interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7736,7 +7736,7 @@ func (s *mqlAuditCvss) MqlCompute(name string) error {
 
 // AuditAdvisory resource interface
 type AuditAdvisory interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8039,7 +8039,7 @@ func (s *mqlAuditAdvisory) MqlCompute(name string) error {
 
 // AuditCve resource interface
 type AuditCve interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8372,7 +8372,7 @@ func (s *mqlAuditCve) MqlCompute(name string) error {
 
 // Process resource interface
 type Process interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8696,7 +8696,7 @@ func (s *mqlProcess) ComputeFlags() error {
 
 // Processes resource interface
 type Processes interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8838,7 +8838,7 @@ func (s *mqlProcesses) ComputeList() error {
 
 // Port resource interface
 type Port interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9245,7 +9245,7 @@ func (s *mqlPort) ComputeTls() error {
 
 // Ports resource interface
 type Ports interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9435,7 +9435,7 @@ func (s *mqlPorts) ComputeList() error {
 
 // Socket resource interface
 type Socket interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9618,7 +9618,7 @@ func (s *mqlSocket) MqlCompute(name string) error {
 
 // Tls resource interface
 type Tls interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10092,7 +10092,7 @@ func (s *mqlTls) ComputeNonSniCertificates() error {
 
 // DomainName resource interface
 type DomainName interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10344,7 +10344,7 @@ func (s *mqlDomainName) MqlCompute(name string) error {
 
 // Dns resource interface
 type Dns interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10674,7 +10674,7 @@ func (s *mqlDns) ComputeDkim() error {
 
 // DnsRecord resource interface
 type DnsRecord interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10917,7 +10917,7 @@ func (s *mqlDnsRecord) MqlCompute(name string) error {
 
 // DnsMxRecord resource interface
 type DnsMxRecord interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11100,7 +11100,7 @@ func (s *mqlDnsMxRecord) MqlCompute(name string) error {
 
 // DnsDkimRecord resource interface
 type DnsDkimRecord interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11511,7 +11511,7 @@ func (s *mqlDnsDkimRecord) ComputeValid() error {
 
 // YamlPath resource interface
 type YamlPath interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11712,7 +11712,7 @@ func (s *mqlYamlPath) ComputeResult() error {
 
 // ParseCertificates resource interface
 type ParseCertificates interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12004,7 +12004,7 @@ func (s *mqlParseCertificates) ComputeList() error {
 
 // PkixName resource interface
 type PkixName interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12487,7 +12487,7 @@ func (s *mqlPkixName) MqlCompute(name string) error {
 
 // PkixExtension resource interface
 type PkixExtension interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12670,7 +12670,7 @@ func (s *mqlPkixExtension) MqlCompute(name string) error {
 
 // Certificate resource interface
 type Certificate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13897,7 +13897,7 @@ func (s *mqlCertificate) ComputeIsVerified() error {
 
 // Privatekey resource interface
 type Privatekey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14116,7 +14116,7 @@ func (s *mqlPrivatekey) ComputeEncrypted() error {
 
 // ParseOpenpgp resource interface
 type ParseOpenpgp interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14408,7 +14408,7 @@ func (s *mqlParseOpenpgp) ComputeList() error {
 
 // OpenpgpEntity resource interface
 type OpenpgpEntity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14579,7 +14579,7 @@ func (s *mqlOpenpgpEntity) ComputeIdentities() error {
 
 // OpenpgpPublicKey resource interface
 type OpenpgpPublicKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14852,7 +14852,7 @@ func (s *mqlOpenpgpPublicKey) MqlCompute(name string) error {
 
 // OpenpgpIdentity resource interface
 type OpenpgpIdentity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15143,7 +15143,7 @@ func (s *mqlOpenpgpIdentity) ComputeSignatures() error {
 
 // OpenpgpSignature resource interface
 type OpenpgpSignature interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15566,7 +15566,7 @@ func (s *mqlOpenpgpSignature) MqlCompute(name string) error {
 
 // Uuid resource interface
 type Uuid interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15842,7 +15842,7 @@ func (s *mqlUuid) ComputeVariant() error {
 
 // Socketstats resource interface
 type Socketstats interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15984,7 +15984,7 @@ func (s *mqlSocketstats) ComputeOpenPorts() error {
 
 // Kernel resource interface
 type Kernel interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16279,7 +16279,7 @@ func (s *mqlKernel) ComputeInstalled() error {
 
 // KernelModule resource interface
 type KernelModule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16471,7 +16471,7 @@ func (s *mqlKernelModule) MqlCompute(name string) error {
 
 // Package resource interface
 type Package interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16957,7 +16957,7 @@ func (s *mqlPackage) ComputeOutdated() error {
 
 // Packages resource interface
 type Packages interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17096,4 +17096,3 @@ func (s *mqlPackages) ComputeList() error {
 	s.Cache.Store("list", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-

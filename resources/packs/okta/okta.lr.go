@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -29,7 +29,7 @@ func Init(registry *resources.Registry) {
 
 // Okta resource interface
 type Okta interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -411,7 +411,7 @@ func (s *mqlOkta) ComputeNetworks() error {
 
 // OktaOrganization resource interface
 type OktaOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1263,7 +1263,7 @@ func (s *mqlOktaOrganization) ComputeThreatInsightSettings() error {
 
 // OktaPolicies resource interface
 type OktaPolicies interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1693,7 +1693,7 @@ func (s *mqlOktaPolicies) ComputeProfileEnrollment() error {
 
 // OktaUser resource interface
 type OktaUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2224,7 +2224,7 @@ func (s *mqlOktaUser) ComputeRoles() error {
 
 // OktaRole resource interface
 type OktaRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2527,7 +2527,7 @@ func (s *mqlOktaRole) MqlCompute(name string) error {
 
 // OktaGroup resource interface
 type OktaGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2800,7 +2800,7 @@ func (s *mqlOktaGroup) MqlCompute(name string) error {
 
 // OktaApplication resource interface
 type OktaApplication interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3283,7 +3283,7 @@ func (s *mqlOktaApplication) MqlCompute(name string) error {
 
 // OktaDomain resource interface
 type OktaDomain interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3526,7 +3526,7 @@ func (s *mqlOktaDomain) MqlCompute(name string) error {
 
 // OktaPolicy resource interface
 type OktaPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3997,7 +3997,7 @@ func (s *mqlOktaPolicy) ComputeRules() error {
 
 // OktaPolicyRule resource interface
 type OktaPolicyRule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4390,7 +4390,7 @@ func (s *mqlOktaPolicyRule) MqlCompute(name string) error {
 
 // OktaTrustedOrigin resource interface
 type OktaTrustedOrigin interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4753,7 +4753,7 @@ func (s *mqlOktaTrustedOrigin) MqlCompute(name string) error {
 
 // OktaNetwork resource interface
 type OktaNetwork interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5236,7 +5236,7 @@ func (s *mqlOktaNetwork) MqlCompute(name string) error {
 
 // OktaThreatsConfiguration resource interface
 type OktaThreatsConfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5446,4 +5446,3 @@ func (s *mqlOktaThreatsConfiguration) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"okta.threatsConfiguration\" resource")
 	}
 }
-

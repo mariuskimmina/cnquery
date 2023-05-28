@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 	"go.mondoo.com/cnquery/resources/packs/core"
 )
 
@@ -19,7 +19,7 @@ func Init(registry *resources.Registry) {
 
 // Python resource interface
 type Python interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -247,7 +247,7 @@ func (s *mqlPython) ComputeToplevel() error {
 
 // PythonPackage resource interface
 type PythonPackage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -586,4 +586,3 @@ func (s *mqlPythonPackage) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"python.package\" resource")
 	}
 }
-

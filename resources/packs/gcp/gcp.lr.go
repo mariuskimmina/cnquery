@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -138,7 +138,7 @@ func Init(registry *resources.Registry) {
 
 // GcpOrganization resource interface
 type GcpOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -625,7 +625,7 @@ func (s *mqlGcpOrganization) ComputeProjects() error {
 
 // GcpFolders resource interface
 type GcpFolders interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -844,7 +844,7 @@ func (s *mqlGcpFolders) ComputeList() error {
 
 // GcpFolder resource interface
 type GcpFolder interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1222,7 +1222,7 @@ func (s *mqlGcpFolder) ComputeProjects() error {
 
 // GcpProjects resource interface
 type GcpProjects interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1441,7 +1441,7 @@ func (s *mqlGcpProjects) ComputeList() error {
 
 // GcpProject resource interface
 type GcpProject interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2936,7 +2936,7 @@ func (s *mqlGcpProject) ComputeMonitoring() error {
 
 // GcpService resource interface
 type GcpService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3236,7 +3236,7 @@ func (s *mqlGcpService) ComputeEnabled() error {
 
 // GcpRecommendation resource interface
 type GcpRecommendation interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3689,7 +3689,7 @@ func (s *mqlGcpRecommendation) MqlCompute(name string) error {
 
 // GcpResourcemanagerBinding resource interface
 type GcpResourcemanagerBinding interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3872,7 +3872,7 @@ func (s *mqlGcpResourcemanagerBinding) MqlCompute(name string) error {
 
 // GcpProjectComputeService resource interface
 type GcpProjectComputeService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4676,7 +4676,7 @@ func (s *mqlGcpProjectComputeService) ComputeForwardingRules() error {
 
 // GcpProjectComputeServiceAddress resource interface
 type GcpProjectComputeServiceAddress interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5345,7 +5345,7 @@ func (s *mqlGcpProjectComputeServiceAddress) ComputeSubnetwork() error {
 
 // GcpProjectComputeServiceForwardingRule resource interface
 type GcpProjectComputeServiceForwardingRule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6284,7 +6284,7 @@ func (s *mqlGcpProjectComputeServiceForwardingRule) ComputeSubnetwork() error {
 
 // GcpProjectComputeServiceRegion resource interface
 type GcpProjectComputeServiceRegion interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6596,7 +6596,7 @@ func (s *mqlGcpProjectComputeServiceRegion) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceZone resource interface
 type GcpProjectComputeServiceZone interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6839,7 +6839,7 @@ func (s *mqlGcpProjectComputeServiceZone) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceMachineType resource interface
 type GcpProjectComputeServiceMachineType interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7262,7 +7262,7 @@ func (s *mqlGcpProjectComputeServiceMachineType) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceInstance resource interface
 type GcpProjectComputeServiceInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8543,7 +8543,7 @@ func (s *mqlGcpProjectComputeServiceInstance) ComputeMachineType() error {
 
 // GcpProjectComputeServiceServiceaccount resource interface
 type GcpProjectComputeServiceServiceaccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8696,7 +8696,7 @@ func (s *mqlGcpProjectComputeServiceServiceaccount) MqlCompute(name string) erro
 
 // GcpProjectComputeServiceDisk resource interface
 type GcpProjectComputeServiceDisk interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9299,7 +9299,7 @@ func (s *mqlGcpProjectComputeServiceDisk) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceAttachedDisk resource interface
 type GcpProjectComputeServiceAttachedDisk interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9860,7 +9860,7 @@ func (s *mqlGcpProjectComputeServiceAttachedDisk) ComputeSource() error {
 
 // GcpProjectComputeServiceSnapshot resource interface
 type GcpProjectComputeServiceSnapshot interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10433,7 +10433,7 @@ func (s *mqlGcpProjectComputeServiceSnapshot) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceImage resource interface
 type GcpProjectComputeServiceImage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10895,7 +10895,7 @@ func (s *mqlGcpProjectComputeServiceImage) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceFirewall resource interface
 type GcpProjectComputeServiceFirewall interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11447,7 +11447,7 @@ func (s *mqlGcpProjectComputeServiceFirewall) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceNetwork resource interface
 type GcpProjectComputeServiceNetwork interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12017,7 +12017,7 @@ func (s *mqlGcpProjectComputeServiceNetwork) ComputeSubnetworks() error {
 
 // GcpProjectComputeServiceSubnetwork resource interface
 type GcpProjectComputeServiceSubnetwork interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12797,7 +12797,7 @@ func (s *mqlGcpProjectComputeServiceSubnetwork) ComputeRegion() error {
 
 // GcpProjectComputeServiceSubnetworkLogConfig resource interface
 type GcpProjectComputeServiceSubnetworkLogConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13100,7 +13100,7 @@ func (s *mqlGcpProjectComputeServiceSubnetworkLogConfig) MqlCompute(name string)
 
 // GcpProjectComputeServiceRouter resource interface
 type GcpProjectComputeServiceRouter interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13433,7 +13433,7 @@ func (s *mqlGcpProjectComputeServiceRouter) MqlCompute(name string) error {
 
 // GcpProjectComputeServiceBackendService resource interface
 type GcpProjectComputeServiceBackendService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14516,7 +14516,7 @@ func (s *mqlGcpProjectComputeServiceBackendService) MqlCompute(name string) erro
 
 // GcpProjectComputeServiceBackendServiceBackend resource interface
 type GcpProjectComputeServiceBackendServiceBackend interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14999,7 +14999,7 @@ func (s *mqlGcpProjectComputeServiceBackendServiceBackend) MqlCompute(name strin
 
 // GcpProjectComputeServiceBackendServiceCdnPolicy resource interface
 type GcpProjectComputeServiceBackendServiceCdnPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15482,7 +15482,7 @@ func (s *mqlGcpProjectComputeServiceBackendServiceCdnPolicy) MqlCompute(name str
 
 // GcpProjectStorageService resource interface
 type GcpProjectStorageService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15662,7 +15662,7 @@ func (s *mqlGcpProjectStorageService) ComputeBuckets() error {
 
 // GcpProjectStorageServiceBucket resource interface
 type GcpProjectStorageServiceBucket interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16172,7 +16172,7 @@ func (s *mqlGcpProjectStorageServiceBucket) ComputeIamPolicy() error {
 
 // GcpProjectSqlService resource interface
 type GcpProjectSqlService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16343,7 +16343,7 @@ func (s *mqlGcpProjectSqlService) ComputeInstances() error {
 
 // GcpProjectSqlServiceInstance resource interface
 type GcpProjectSqlServiceInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17204,7 +17204,7 @@ func (s *mqlGcpProjectSqlServiceInstance) ComputeDatabases() error {
 
 // GcpProjectSqlServiceInstanceDatabase resource interface
 type GcpProjectSqlServiceInstanceDatabase interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17477,7 +17477,7 @@ func (s *mqlGcpProjectSqlServiceInstanceDatabase) MqlCompute(name string) error 
 
 // GcpProjectSqlServiceInstanceIpMapping resource interface
 type GcpProjectSqlServiceInstanceIpMapping interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17690,7 +17690,7 @@ func (s *mqlGcpProjectSqlServiceInstanceIpMapping) MqlCompute(name string) error
 
 // GcpProjectSqlServiceInstanceSettings resource interface
 type GcpProjectSqlServiceInstanceSettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18653,7 +18653,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettings) MqlCompute(name string) error 
 
 // GcpProjectSqlServiceInstanceSettingsBackupconfiguration resource interface
 type GcpProjectSqlServiceInstanceSettingsBackupconfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18986,7 +18986,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettingsBackupconfiguration) MqlCompute(
 
 // GcpProjectSqlServiceInstanceSettingsDenyMaintenancePeriod resource interface
 type GcpProjectSqlServiceInstanceSettingsDenyMaintenancePeriod interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19199,7 +19199,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettingsDenyMaintenancePeriod) MqlComput
 
 // GcpProjectSqlServiceInstanceSettingsIpConfiguration resource interface
 type GcpProjectSqlServiceInstanceSettingsIpConfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19472,7 +19472,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettingsIpConfiguration) MqlCompute(name
 
 // GcpProjectSqlServiceInstanceSettingsMaintenanceWindow resource interface
 type GcpProjectSqlServiceInstanceSettingsMaintenanceWindow interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19685,7 +19685,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettingsMaintenanceWindow) MqlCompute(na
 
 // GcpProjectSqlServiceInstanceSettingsPasswordValidationPolicy resource interface
 type GcpProjectSqlServiceInstanceSettingsPasswordValidationPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19988,7 +19988,7 @@ func (s *mqlGcpProjectSqlServiceInstanceSettingsPasswordValidationPolicy) MqlCom
 
 // GcpProjectBigqueryService resource interface
 type GcpProjectBigqueryService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20168,7 +20168,7 @@ func (s *mqlGcpProjectBigqueryService) ComputeDatasets() error {
 
 // GcpProjectBigqueryServiceDataset resource interface
 type GcpProjectBigqueryServiceDataset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20744,7 +20744,7 @@ func (s *mqlGcpProjectBigqueryServiceDataset) ComputeRoutines() error {
 
 // GcpProjectBigqueryServiceDatasetAccessEntry resource interface
 type GcpProjectBigqueryServiceDatasetAccessEntry interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21077,7 +21077,7 @@ func (s *mqlGcpProjectBigqueryServiceDatasetAccessEntry) MqlCompute(name string)
 
 // GcpProjectBigqueryServiceTable resource interface
 type GcpProjectBigqueryServiceTable interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21920,7 +21920,7 @@ func (s *mqlGcpProjectBigqueryServiceTable) MqlCompute(name string) error {
 
 // GcpProjectBigqueryServiceModel resource interface
 type GcpProjectBigqueryServiceModel interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22373,7 +22373,7 @@ func (s *mqlGcpProjectBigqueryServiceModel) MqlCompute(name string) error {
 
 // GcpProjectBigqueryServiceRoutine resource interface
 type GcpProjectBigqueryServiceRoutine interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22706,7 +22706,7 @@ func (s *mqlGcpProjectBigqueryServiceRoutine) MqlCompute(name string) error {
 
 // GcpProjectDnsService resource interface
 type GcpProjectDnsService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22934,7 +22934,7 @@ func (s *mqlGcpProjectDnsService) ComputePolicies() error {
 
 // GcpProjectDnsServiceManagedzone resource interface
 type GcpProjectDnsServiceManagedzone interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23375,7 +23375,7 @@ func (s *mqlGcpProjectDnsServiceManagedzone) ComputeRecordSets() error {
 
 // GcpProjectDnsServiceRecordset resource interface
 type GcpProjectDnsServiceRecordset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23648,7 +23648,7 @@ func (s *mqlGcpProjectDnsServiceRecordset) MqlCompute(name string) error {
 
 // GcpProjectDnsServicePolicy resource interface
 type GcpProjectDnsServicePolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23999,7 +23999,7 @@ func (s *mqlGcpProjectDnsServicePolicy) ComputeNetworks() error {
 
 // GcpProjectGkeService resource interface
 type GcpProjectGkeService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24170,7 +24170,7 @@ func (s *mqlGcpProjectGkeService) ComputeClusters() error {
 
 // GcpProjectGkeServiceCluster resource interface
 type GcpProjectGkeServiceCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25232,7 +25232,7 @@ func (s *mqlGcpProjectGkeServiceCluster) MqlCompute(name string) error {
 
 // GcpProjectGkeServiceClusterAddonsConfig resource interface
 type GcpProjectGkeServiceClusterAddonsConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25655,7 +25655,7 @@ func (s *mqlGcpProjectGkeServiceClusterAddonsConfig) MqlCompute(name string) err
 
 // GcpProjectGkeServiceClusterIpAllocationPolicy resource interface
 type GcpProjectGkeServiceClusterIpAllocationPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26138,7 +26138,7 @@ func (s *mqlGcpProjectGkeServiceClusterIpAllocationPolicy) MqlCompute(name strin
 
 // GcpProjectGkeServiceClusterNetworkConfig resource interface
 type GcpProjectGkeServiceClusterNetworkConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -26627,7 +26627,7 @@ func (s *mqlGcpProjectGkeServiceClusterNetworkConfig) ComputeSubnetwork() error 
 
 // GcpProjectGkeServiceClusterNodepool resource interface
 type GcpProjectGkeServiceClusterNodepool interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27020,7 +27020,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepool) MqlCompute(name string) error {
 
 // GcpProjectGkeServiceClusterNodepoolNetworkConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolNetworkConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27233,7 +27233,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolNetworkConfig) MqlCompute(name st
 
 // GcpProjectGkeServiceClusterNodepoolNetworkConfigPerformanceConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolNetworkConfigPerformanceConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -27386,7 +27386,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolNetworkConfigPerformanceConfig) M
 
 // GcpProjectGkeServiceClusterNodepoolConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28337,7 +28337,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfig) ComputeServiceAccount() e
 
 // GcpProjectGkeServiceClusterNodepoolConfigAccelerator resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigAccelerator interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28580,7 +28580,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigAccelerator) MqlCompute(nam
 
 // GcpProjectGkeServiceClusterNodepoolConfigAcceleratorGpuSharingConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigAcceleratorGpuSharingConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28763,7 +28763,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigAcceleratorGpuSharingConfig
 
 // GcpProjectGkeServiceClusterNodepoolConfigNodeTaint resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigNodeTaint interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -28976,7 +28976,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigNodeTaint) MqlCompute(name 
 
 // GcpProjectGkeServiceClusterNodepoolConfigSandboxConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigSandboxConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29129,7 +29129,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigSandboxConfig) MqlCompute(n
 
 // GcpProjectGkeServiceClusterNodepoolConfigShieldedInstanceConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigShieldedInstanceConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29312,7 +29312,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigShieldedInstanceConfig) Mql
 
 // GcpProjectGkeServiceClusterNodepoolConfigLinuxNodeConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigLinuxNodeConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29465,7 +29465,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigLinuxNodeConfig) MqlCompute
 
 // GcpProjectGkeServiceClusterNodepoolConfigKubeletConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigKubeletConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29678,7 +29678,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigKubeletConfig) MqlCompute(n
 
 // GcpProjectGkeServiceClusterNodepoolConfigGcfsConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigGcfsConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29831,7 +29831,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigGcfsConfig) MqlCompute(name
 
 // GcpProjectGkeServiceClusterNodepoolConfigAdvancedMachineFeatures resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigAdvancedMachineFeatures interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -29984,7 +29984,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigAdvancedMachineFeatures) Mq
 
 // GcpProjectGkeServiceClusterNodepoolConfigGvnicConfig resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigGvnicConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -30137,7 +30137,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigGvnicConfig) MqlCompute(nam
 
 // GcpProjectGkeServiceClusterNodepoolConfigConfidentialNodes resource interface
 type GcpProjectGkeServiceClusterNodepoolConfigConfidentialNodes interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -30290,7 +30290,7 @@ func (s *mqlGcpProjectGkeServiceClusterNodepoolConfigConfidentialNodes) MqlCompu
 
 // GcpProjectPubsubService resource interface
 type GcpProjectPubsubService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -30566,7 +30566,7 @@ func (s *mqlGcpProjectPubsubService) ComputeSnapshots() error {
 
 // GcpProjectPubsubServiceTopic resource interface
 type GcpProjectPubsubServiceTopic interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -30767,7 +30767,7 @@ func (s *mqlGcpProjectPubsubServiceTopic) ComputeConfig() error {
 
 // GcpProjectPubsubServiceTopicConfig resource interface
 type GcpProjectPubsubServiceTopicConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31010,7 +31010,7 @@ func (s *mqlGcpProjectPubsubServiceTopicConfig) MqlCompute(name string) error {
 
 // GcpProjectPubsubServiceTopicConfigMessagestoragepolicy resource interface
 type GcpProjectPubsubServiceTopicConfigMessagestoragepolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31163,7 +31163,7 @@ func (s *mqlGcpProjectPubsubServiceTopicConfigMessagestoragepolicy) MqlCompute(n
 
 // GcpProjectPubsubServiceSubscription resource interface
 type GcpProjectPubsubServiceSubscription interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31364,7 +31364,7 @@ func (s *mqlGcpProjectPubsubServiceSubscription) ComputeConfig() error {
 
 // GcpProjectPubsubServiceSubscriptionConfig resource interface
 type GcpProjectPubsubServiceSubscriptionConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31727,7 +31727,7 @@ func (s *mqlGcpProjectPubsubServiceSubscriptionConfig) MqlCompute(name string) e
 
 // GcpProjectPubsubServiceSubscriptionConfigPushconfig resource interface
 type GcpProjectPubsubServiceSubscriptionConfigPushconfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -31910,7 +31910,7 @@ func (s *mqlGcpProjectPubsubServiceSubscriptionConfigPushconfig) MqlCompute(name
 
 // GcpProjectPubsubServiceSnapshot resource interface
 type GcpProjectPubsubServiceSnapshot interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32123,7 +32123,7 @@ func (s *mqlGcpProjectPubsubServiceSnapshot) MqlCompute(name string) error {
 
 // GcpProjectKmsService resource interface
 type GcpProjectKmsService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32351,7 +32351,7 @@ func (s *mqlGcpProjectKmsService) ComputeKeyrings() error {
 
 // GcpProjectKmsServiceKeyring resource interface
 type GcpProjectKmsServiceKeyring interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -32642,7 +32642,7 @@ func (s *mqlGcpProjectKmsServiceKeyring) ComputeCryptokeys() error {
 
 // GcpProjectKmsServiceKeyringCryptokey resource interface
 type GcpProjectKmsServiceKeyringCryptokey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33191,7 +33191,7 @@ func (s *mqlGcpProjectKmsServiceKeyringCryptokey) ComputeIamPolicy() error {
 
 // GcpProjectKmsServiceKeyringCryptokeyVersion resource interface
 type GcpProjectKmsServiceKeyringCryptokeyVersion interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33734,7 +33734,7 @@ func (s *mqlGcpProjectKmsServiceKeyringCryptokeyVersion) MqlCompute(name string)
 
 // GcpProjectKmsServiceKeyringCryptokeyVersionAttestation resource interface
 type GcpProjectKmsServiceKeyringCryptokeyVersionAttestation interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -33917,7 +33917,7 @@ func (s *mqlGcpProjectKmsServiceKeyringCryptokeyVersionAttestation) MqlCompute(n
 
 // GcpProjectKmsServiceKeyringCryptokeyVersionAttestationCertificatechains resource interface
 type GcpProjectKmsServiceKeyringCryptokeyVersionAttestationCertificatechains interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34130,7 +34130,7 @@ func (s *mqlGcpProjectKmsServiceKeyringCryptokeyVersionAttestationCertificatecha
 
 // GcpProjectKmsServiceKeyringCryptokeyVersionExternalProtectionLevelOptions resource interface
 type GcpProjectKmsServiceKeyringCryptokeyVersionExternalProtectionLevelOptions interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34313,7 +34313,7 @@ func (s *mqlGcpProjectKmsServiceKeyringCryptokeyVersionExternalProtectionLevelOp
 
 // GcpEssentialContact resource interface
 type GcpEssentialContact interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34586,7 +34586,7 @@ func (s *mqlGcpEssentialContact) MqlCompute(name string) error {
 
 // GcpProjectApiKey resource interface
 type GcpProjectApiKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -34979,7 +34979,7 @@ func (s *mqlGcpProjectApiKey) MqlCompute(name string) error {
 
 // GcpProjectApiKeyRestrictions resource interface
 type GcpProjectApiKeyRestrictions interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -35252,7 +35252,7 @@ func (s *mqlGcpProjectApiKeyRestrictions) MqlCompute(name string) error {
 
 // GcpProjectLoggingservice resource interface
 type GcpProjectLoggingservice interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -35519,7 +35519,7 @@ func (s *mqlGcpProjectLoggingservice) ComputeSinks() error {
 
 // GcpProjectLoggingserviceBucket resource interface
 type GcpProjectLoggingserviceBucket interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -35942,7 +35942,7 @@ func (s *mqlGcpProjectLoggingserviceBucket) MqlCompute(name string) error {
 
 // GcpProjectLoggingserviceBucketIndexConfig resource interface
 type GcpProjectLoggingserviceBucketIndexConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -36155,7 +36155,7 @@ func (s *mqlGcpProjectLoggingserviceBucketIndexConfig) MqlCompute(name string) e
 
 // GcpProjectLoggingserviceMetric resource interface
 type GcpProjectLoggingserviceMetric interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -36416,7 +36416,7 @@ func (s *mqlGcpProjectLoggingserviceMetric) ComputeAlertPolicies() error {
 
 // GcpProjectLoggingserviceSink resource interface
 type GcpProjectLoggingserviceSink interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -36737,7 +36737,7 @@ func (s *mqlGcpProjectLoggingserviceSink) ComputeStorageBucket() error {
 
 // GcpProjectIamService resource interface
 type GcpProjectIamService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -36908,7 +36908,7 @@ func (s *mqlGcpProjectIamService) ComputeServiceAccounts() error {
 
 // GcpProjectIamServiceServiceAccount resource interface
 type GcpProjectIamServiceServiceAccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -37298,7 +37298,7 @@ func (s *mqlGcpProjectIamServiceServiceAccount) ComputeKeys() error {
 
 // GcpProjectIamServiceServiceAccountKey resource interface
 type GcpProjectIamServiceServiceAccountKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -37601,7 +37601,7 @@ func (s *mqlGcpProjectIamServiceServiceAccountKey) MqlCompute(name string) error
 
 // GcpProjectCloudFunction resource interface
 type GcpProjectCloudFunction interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -38684,7 +38684,7 @@ func (s *mqlGcpProjectCloudFunction) MqlCompute(name string) error {
 
 // GcpProjectDataprocService resource interface
 type GcpProjectDataprocService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -38933,7 +38933,7 @@ func (s *mqlGcpProjectDataprocService) ComputeClusters() error {
 
 // GcpProjectDataprocServiceCluster resource interface
 type GcpProjectDataprocServiceCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -39296,7 +39296,7 @@ func (s *mqlGcpProjectDataprocServiceCluster) MqlCompute(name string) error {
 
 // GcpProjectDataprocServiceClusterConfig resource interface
 type GcpProjectDataprocServiceClusterConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -39899,7 +39899,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfig) MqlCompute(name string) erro
 
 // GcpProjectDataprocServiceClusterConfigGceCluster resource interface
 type GcpProjectDataprocServiceClusterConfigGceCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -40490,7 +40490,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigGceCluster) ComputeServiceAcco
 
 // GcpProjectDataprocServiceClusterConfigGceClusterReservationAffinity resource interface
 type GcpProjectDataprocServiceClusterConfigGceClusterReservationAffinity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -40703,7 +40703,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigGceClusterReservationAffinity)
 
 // GcpProjectDataprocServiceClusterConfigGceClusterShieldedInstanceConfig resource interface
 type GcpProjectDataprocServiceClusterConfigGceClusterShieldedInstanceConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -40916,7 +40916,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigGceClusterShieldedInstanceConf
 
 // GcpProjectDataprocServiceClusterConfigGkeCluster resource interface
 type GcpProjectDataprocServiceClusterConfigGkeCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -41099,7 +41099,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigGkeCluster) MqlCompute(name st
 
 // GcpProjectDataprocServiceClusterConfigLifecycle resource interface
 type GcpProjectDataprocServiceClusterConfigLifecycle interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -41342,7 +41342,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigLifecycle) MqlCompute(name str
 
 // GcpProjectDataprocServiceClusterConfigInstance resource interface
 type GcpProjectDataprocServiceClusterConfigInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -41795,7 +41795,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigInstance) MqlCompute(name stri
 
 // GcpProjectDataprocServiceClusterConfigInstanceDiskConfig resource interface
 type GcpProjectDataprocServiceClusterConfigInstanceDiskConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -42038,7 +42038,7 @@ func (s *mqlGcpProjectDataprocServiceClusterConfigInstanceDiskConfig) MqlCompute
 
 // GcpProjectDataprocServiceClusterStatus resource interface
 type GcpProjectDataprocServiceClusterStatus interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -42281,7 +42281,7 @@ func (s *mqlGcpProjectDataprocServiceClusterStatus) MqlCompute(name string) erro
 
 // GcpProjectDataprocServiceClusterVirtualClusterConfig resource interface
 type GcpProjectDataprocServiceClusterVirtualClusterConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -42494,7 +42494,7 @@ func (s *mqlGcpProjectDataprocServiceClusterVirtualClusterConfig) MqlCompute(nam
 
 // GcpProjectCloudRunService resource interface
 type GcpProjectCloudRunService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -42818,7 +42818,7 @@ func (s *mqlGcpProjectCloudRunService) ComputeJobs() error {
 
 // GcpProjectCloudRunServiceOperation resource interface
 type GcpProjectCloudRunServiceOperation interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -43001,7 +43001,7 @@ func (s *mqlGcpProjectCloudRunServiceOperation) MqlCompute(name string) error {
 
 // GcpProjectCloudRunServiceService resource interface
 type GcpProjectCloudRunServiceService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -43874,7 +43874,7 @@ func (s *mqlGcpProjectCloudRunServiceService) MqlCompute(name string) error {
 
 // GcpProjectCloudRunServiceServiceRevisionTemplate resource interface
 type GcpProjectCloudRunServiceServiceRevisionTemplate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -44435,7 +44435,7 @@ func (s *mqlGcpProjectCloudRunServiceServiceRevisionTemplate) ComputeServiceAcco
 
 // GcpProjectCloudRunServiceContainer resource interface
 type GcpProjectCloudRunServiceContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -44888,7 +44888,7 @@ func (s *mqlGcpProjectCloudRunServiceContainer) MqlCompute(name string) error {
 
 // GcpProjectCloudRunServiceContainerProbe resource interface
 type GcpProjectCloudRunServiceContainerProbe interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -45191,7 +45191,7 @@ func (s *mqlGcpProjectCloudRunServiceContainerProbe) MqlCompute(name string) err
 
 // GcpProjectCloudRunServiceCondition resource interface
 type GcpProjectCloudRunServiceCondition interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -45464,7 +45464,7 @@ func (s *mqlGcpProjectCloudRunServiceCondition) MqlCompute(name string) error {
 
 // GcpProjectCloudRunServiceJob resource interface
 type GcpProjectCloudRunServiceJob interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -46217,7 +46217,7 @@ func (s *mqlGcpProjectCloudRunServiceJob) MqlCompute(name string) error {
 
 // GcpProjectCloudRunServiceJobExecutionTemplate resource interface
 type GcpProjectCloudRunServiceJobExecutionTemplate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -46490,7 +46490,7 @@ func (s *mqlGcpProjectCloudRunServiceJobExecutionTemplate) MqlCompute(name strin
 
 // GcpProjectCloudRunServiceJobExecutionTemplateTaskTemplate resource interface
 type GcpProjectCloudRunServiceJobExecutionTemplateTaskTemplate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -46931,7 +46931,7 @@ func (s *mqlGcpProjectCloudRunServiceJobExecutionTemplateTaskTemplate) ComputeSe
 
 // GcpAccessApprovalSettings resource interface
 type GcpAccessApprovalSettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -47234,7 +47234,7 @@ func (s *mqlGcpAccessApprovalSettings) MqlCompute(name string) error {
 
 // GcpProjectMonitoringService resource interface
 type GcpProjectMonitoringService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -47414,7 +47414,7 @@ func (s *mqlGcpProjectMonitoringService) ComputeAlertPolicies() error {
 
 // GcpProjectMonitoringServiceAlertPolicy resource interface
 type GcpProjectMonitoringServiceAlertPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -47954,4 +47954,3 @@ func (s *mqlGcpProjectMonitoringServiceAlertPolicy) MqlCompute(name string) erro
 		return errors.New("Cannot find field '" + name + "' in \"gcp.project.monitoringService.alertPolicy\" resource")
 	}
 }
-

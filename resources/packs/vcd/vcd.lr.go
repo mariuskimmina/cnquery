@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -28,7 +28,7 @@ func Init(registry *resources.Registry) {
 
 // Vcd resource interface
 type Vcd interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -362,7 +362,7 @@ func (s *mqlVcd) ComputeServerInstances() error {
 
 // VcdOrganization resource interface
 type VcdOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -941,7 +941,7 @@ func (s *mqlVcdOrganization) ComputeLdapConfiguration() error {
 
 // VcdOrganizationLdapSettings resource interface
 type VcdOrganizationLdapSettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1214,7 +1214,7 @@ func (s *mqlVcdOrganizationLdapSettings) MqlCompute(name string) error {
 
 // VcdVdcProvider resource interface
 type VcdVdcProvider interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1955,7 +1955,7 @@ func (s *mqlVcdVdcProvider) ComputeMetadata() error {
 
 // VcdNetworkPool resource interface
 type VcdNetworkPool interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2138,7 +2138,7 @@ func (s *mqlVcdNetworkPool) MqlCompute(name string) error {
 
 // VcdExternalNetwork resource interface
 type VcdExternalNetwork interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2405,7 +2405,7 @@ func (s *mqlVcdExternalNetwork) ComputeConfiguration() error {
 
 // VcdVm resource interface
 type VcdVm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3338,7 +3338,7 @@ func (s *mqlVcdVm) MqlCompute(name string) error {
 
 // VcdServerInstance resource interface
 type VcdServerInstance interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3731,7 +3731,7 @@ func (s *mqlVcdServerInstance) MqlCompute(name string) error {
 
 // VcdRight resource interface
 type VcdRight interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4034,7 +4034,7 @@ func (s *mqlVcdRight) MqlCompute(name string) error {
 
 // VcdRole resource interface
 type VcdRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4217,7 +4217,7 @@ func (s *mqlVcdRole) MqlCompute(name string) error {
 
 // VcdVdc resource interface
 type VcdVdc interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4610,7 +4610,7 @@ func (s *mqlVcdVdc) MqlCompute(name string) error {
 
 // VcdVdcGroup resource interface
 type VcdVdcGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4910,4 +4910,3 @@ func (s *mqlVcdVdcGroup) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"vcd.vdcGroup\" resource")
 	}
 }
-

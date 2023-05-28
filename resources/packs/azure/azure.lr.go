@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -89,7 +89,7 @@ func Init(registry *resources.Registry) {
 
 // Azuread resource interface
 type Azuread interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -423,7 +423,7 @@ func (s *mqlAzuread) ComputeServicePrincipals() error {
 
 // AzureadUser resource interface
 type AzureadUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -882,7 +882,7 @@ func (s *mqlAzureadUser) ComputeProperties() error {
 
 // AzureadGroup resource interface
 type AzureadGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1299,7 +1299,7 @@ func (s *mqlAzureadGroup) ComputeMembers() error {
 
 // AzureadDomain resource interface
 type AzureadDomain interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1560,7 +1560,7 @@ func (s *mqlAzureadDomain) ComputeProperties() error {
 
 // AzureadApplication resource interface
 type AzureadApplication interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1683,7 +1683,7 @@ func (s *mqlAzureadApplication) MqlCompute(name string) error {
 
 // AzureadServiceprincipal resource interface
 type AzureadServiceprincipal interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1806,7 +1806,7 @@ func (s *mqlAzureadServiceprincipal) MqlCompute(name string) error {
 
 // AzureSubscription resource interface
 type AzureSubscription interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3109,7 +3109,7 @@ func (s *mqlAzureSubscription) ComputeAks() error {
 
 // AzureSubscriptionResource resource interface
 type AzureSubscriptionResource interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3592,7 +3592,7 @@ func (s *mqlAzureSubscriptionResource) MqlCompute(name string) error {
 
 // AzureSubscriptionResourcegroup resource interface
 type AzureSubscriptionResourcegroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3895,7 +3895,7 @@ func (s *mqlAzureSubscriptionResourcegroup) MqlCompute(name string) error {
 
 // AzureSubscriptionComputeService resource interface
 type AzureSubscriptionComputeService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4123,7 +4123,7 @@ func (s *mqlAzureSubscriptionComputeService) ComputeDisks() error {
 
 // AzureSubscriptionComputeServiceVm resource interface
 type AzureSubscriptionComputeServiceVm interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4597,7 +4597,7 @@ func (s *mqlAzureSubscriptionComputeServiceVm) ComputePublicIpAddresses() error 
 
 // AzureSubscriptionComputeServiceDisk resource interface
 type AzureSubscriptionComputeServiceDisk interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4990,7 +4990,7 @@ func (s *mqlAzureSubscriptionComputeServiceDisk) MqlCompute(name string) error {
 
 // AzureSubscriptionNetworkService resource interface
 type AzureSubscriptionNetworkService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5362,7 +5362,7 @@ func (s *mqlAzureSubscriptionNetworkService) ComputeBastionHosts() error {
 
 // AzureSubscriptionNetworkServiceInterface resource interface
 type AzureSubscriptionNetworkServiceInterface interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5713,7 +5713,7 @@ func (s *mqlAzureSubscriptionNetworkServiceInterface) ComputeVm() error {
 
 // AzureSubscriptionNetworkServiceIpAddress resource interface
 type AzureSubscriptionNetworkServiceIpAddress interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5986,7 +5986,7 @@ func (s *mqlAzureSubscriptionNetworkServiceIpAddress) MqlCompute(name string) er
 
 // AzureSubscriptionNetworkServiceBastionHost resource interface
 type AzureSubscriptionNetworkServiceBastionHost interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6289,7 +6289,7 @@ func (s *mqlAzureSubscriptionNetworkServiceBastionHost) MqlCompute(name string) 
 
 // AzureSubscriptionNetworkServiceSecurityGroup resource interface
 type AzureSubscriptionNetworkServiceSecurityGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6691,7 +6691,7 @@ func (s *mqlAzureSubscriptionNetworkServiceSecurityGroup) MqlCompute(name string
 
 // AzureSubscriptionNetworkServiceSecurityrule resource interface
 type AzureSubscriptionNetworkServiceSecurityrule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6934,7 +6934,7 @@ func (s *mqlAzureSubscriptionNetworkServiceSecurityrule) MqlCompute(name string)
 
 // AzureSubscriptionNetworkServiceWatcher resource interface
 type AzureSubscriptionNetworkServiceWatcher interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7315,7 +7315,7 @@ func (s *mqlAzureSubscriptionNetworkServiceWatcher) ComputeFlowLogs() error {
 
 // AzureSubscriptionNetworkServiceWatcherFlowlog resource interface
 type AzureSubscriptionNetworkServiceWatcherFlowlog interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7858,7 +7858,7 @@ func (s *mqlAzureSubscriptionNetworkServiceWatcherFlowlog) MqlCompute(name strin
 
 // AzureSubscriptionStorageService resource interface
 type AzureSubscriptionStorageService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8038,7 +8038,7 @@ func (s *mqlAzureSubscriptionStorageService) ComputeAccounts() error {
 
 // AzureSubscriptionStorageServiceAccount resource interface
 type AzureSubscriptionStorageServiceAccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8650,7 +8650,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccount) ComputeDataProtection() erro
 
 // AzureSubscriptionStorageServiceAccountDataProtection resource interface
 type AzureSubscriptionStorageServiceAccountDataProtection interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8893,7 +8893,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountDataProtection) MqlCompute(nam
 
 // AzureSubscriptionStorageServiceAccountBlobServiceProperties resource interface
 type AzureSubscriptionStorageServiceAccountBlobServiceProperties interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9106,7 +9106,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountBlobServiceProperties) MqlComp
 
 // AzureSubscriptionStorageServiceAccountQueueServiceProperties resource interface
 type AzureSubscriptionStorageServiceAccountQueueServiceProperties interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9319,7 +9319,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountQueueServiceProperties) MqlCom
 
 // AzureSubscriptionStorageServiceAccountTableServiceProperties resource interface
 type AzureSubscriptionStorageServiceAccountTableServiceProperties interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9532,7 +9532,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountTableServiceProperties) MqlCom
 
 // AzureSubscriptionStorageServiceAccountServicePropertiesMetrics resource interface
 type AzureSubscriptionStorageServiceAccountServicePropertiesMetrics interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9775,7 +9775,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountServicePropertiesMetrics) MqlC
 
 // AzureSubscriptionStorageServiceAccountServicePropertiesRetentionPolicy resource interface
 type AzureSubscriptionStorageServiceAccountServicePropertiesRetentionPolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9958,7 +9958,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountServicePropertiesRetentionPoli
 
 // AzureSubscriptionStorageServiceAccountServicePropertiesLogging resource interface
 type AzureSubscriptionStorageServiceAccountServicePropertiesLogging interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10231,7 +10231,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountServicePropertiesLogging) MqlC
 
 // AzureSubscriptionStorageServiceAccountContainer resource interface
 type AzureSubscriptionStorageServiceAccountContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10483,7 +10483,7 @@ func (s *mqlAzureSubscriptionStorageServiceAccountContainer) MqlCompute(name str
 
 // AzureSubscriptionWebService resource interface
 type AzureSubscriptionWebService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10711,7 +10711,7 @@ func (s *mqlAzureSubscriptionWebService) ComputeAvailableRuntimes() error {
 
 // AzureSubscriptionWebServiceAppsite resource interface
 type AzureSubscriptionWebServiceAppsite interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11332,7 +11332,7 @@ func (s *mqlAzureSubscriptionWebServiceAppsite) ComputeStack() error {
 
 // AzureSubscriptionWebServiceAppsiteauthsettings resource interface
 type AzureSubscriptionWebServiceAppsiteauthsettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11575,7 +11575,7 @@ func (s *mqlAzureSubscriptionWebServiceAppsiteauthsettings) MqlCompute(name stri
 
 // AzureSubscriptionWebServiceAppsiteconfig resource interface
 type AzureSubscriptionWebServiceAppsiteconfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11818,7 +11818,7 @@ func (s *mqlAzureSubscriptionWebServiceAppsiteconfig) MqlCompute(name string) er
 
 // AzureSubscriptionSqlService resource interface
 type AzureSubscriptionSqlService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11998,7 +11998,7 @@ func (s *mqlAzureSubscriptionSqlService) ComputeServers() error {
 
 // AzureSubscriptionSqlServiceServer resource interface
 type AzureSubscriptionSqlServiceServer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12760,7 +12760,7 @@ func (s *mqlAzureSubscriptionSqlServiceServer) ComputeVirtualNetworkRules() erro
 
 // AzureSubscriptionSqlServiceServerVulnerabilityassessmentsettings resource interface
 type AzureSubscriptionSqlServiceServerVulnerabilityassessmentsettings interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13123,7 +13123,7 @@ func (s *mqlAzureSubscriptionSqlServiceServerVulnerabilityassessmentsettings) Mq
 
 // AzureSubscriptionSqlServiceServerAdministrator resource interface
 type AzureSubscriptionSqlServiceServerAdministrator interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13426,7 +13426,7 @@ func (s *mqlAzureSubscriptionSqlServiceServerAdministrator) MqlCompute(name stri
 
 // AzureSubscriptionSqlServiceDatabase resource interface
 type AzureSubscriptionSqlServiceDatabase interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14497,7 +14497,7 @@ func (s *mqlAzureSubscriptionSqlServiceDatabase) ComputeUsage() error {
 
 // AzureSubscriptionSqlServiceDatabaseusage resource interface
 type AzureSubscriptionSqlServiceDatabaseusage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14800,7 +14800,7 @@ func (s *mqlAzureSubscriptionSqlServiceDatabaseusage) MqlCompute(name string) er
 
 // AzureSubscriptionPostgresqlService resource interface
 type AzureSubscriptionPostgresqlService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14980,7 +14980,7 @@ func (s *mqlAzureSubscriptionPostgresqlService) ComputeServers() error {
 
 // AzureSubscriptionPostgresqlServiceServer resource interface
 type AzureSubscriptionPostgresqlServiceServer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15406,7 +15406,7 @@ func (s *mqlAzureSubscriptionPostgresqlServiceServer) ComputeFirewallRules() err
 
 // AzureSubscriptionPostgresqlServiceDatabase resource interface
 type AzureSubscriptionPostgresqlServiceDatabase interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15649,7 +15649,7 @@ func (s *mqlAzureSubscriptionPostgresqlServiceDatabase) MqlCompute(name string) 
 
 // AzureSubscriptionMysqlService resource interface
 type AzureSubscriptionMysqlService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15877,7 +15877,7 @@ func (s *mqlAzureSubscriptionMysqlService) ComputeFlexibleServers() error {
 
 // AzureSubscriptionMysqlServiceServer resource interface
 type AzureSubscriptionMysqlServiceServer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16303,7 +16303,7 @@ func (s *mqlAzureSubscriptionMysqlServiceServer) ComputeFirewallRules() error {
 
 // AzureSubscriptionMysqlServiceDatabase resource interface
 type AzureSubscriptionMysqlServiceDatabase interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16546,7 +16546,7 @@ func (s *mqlAzureSubscriptionMysqlServiceDatabase) MqlCompute(name string) error
 
 // AzureSubscriptionMysqlServiceFlexibleServer resource interface
 type AzureSubscriptionMysqlServiceFlexibleServer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -16963,7 +16963,7 @@ func (s *mqlAzureSubscriptionMysqlServiceFlexibleServer) ComputeFirewallRules() 
 
 // AzureSubscriptionMariadbService resource interface
 type AzureSubscriptionMariadbService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17143,7 +17143,7 @@ func (s *mqlAzureSubscriptionMariadbService) ComputeServers() error {
 
 // AzureSubscriptionMariadbServiceServer resource interface
 type AzureSubscriptionMariadbServiceServer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17569,7 +17569,7 @@ func (s *mqlAzureSubscriptionMariadbServiceServer) ComputeFirewallRules() error 
 
 // AzureSubscriptionMariadbServiceDatabase resource interface
 type AzureSubscriptionMariadbServiceDatabase interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17812,7 +17812,7 @@ func (s *mqlAzureSubscriptionMariadbServiceDatabase) MqlCompute(name string) err
 
 // AzureSubscriptionCosmosdbService resource interface
 type AzureSubscriptionCosmosdbService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -17992,7 +17992,7 @@ func (s *mqlAzureSubscriptionCosmosdbService) ComputeAccounts() error {
 
 // AzureSubscriptionCosmosdbServiceAccount resource interface
 type AzureSubscriptionCosmosdbServiceAccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18295,7 +18295,7 @@ func (s *mqlAzureSubscriptionCosmosdbServiceAccount) MqlCompute(name string) err
 
 // AzureSubscriptionSqlServiceConfiguration resource interface
 type AzureSubscriptionSqlServiceConfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18658,7 +18658,7 @@ func (s *mqlAzureSubscriptionSqlServiceConfiguration) MqlCompute(name string) er
 
 // AzureSubscriptionSqlServiceFirewallrule resource interface
 type AzureSubscriptionSqlServiceFirewallrule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -18901,7 +18901,7 @@ func (s *mqlAzureSubscriptionSqlServiceFirewallrule) MqlCompute(name string) err
 
 // AzureSubscriptionSqlServiceVirtualNetworkRule resource interface
 type AzureSubscriptionSqlServiceVirtualNetworkRule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19144,7 +19144,7 @@ func (s *mqlAzureSubscriptionSqlServiceVirtualNetworkRule) MqlCompute(name strin
 
 // AzureSubscriptionKeyvaultService resource interface
 type AzureSubscriptionKeyvaultService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19324,7 +19324,7 @@ func (s *mqlAzureSubscriptionKeyvaultService) ComputeVaults() error {
 
 // AzureSubscriptionKeyvaultServiceVault resource interface
 type AzureSubscriptionKeyvaultServiceVault interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -19864,7 +19864,7 @@ func (s *mqlAzureSubscriptionKeyvaultServiceVault) ComputeDiagnosticSettings() e
 
 // AzureSubscriptionKeyvaultServiceKey resource interface
 type AzureSubscriptionKeyvaultServiceKey interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20371,7 +20371,7 @@ func (s *mqlAzureSubscriptionKeyvaultServiceKey) ComputeVersions() error {
 
 // AzureSubscriptionKeyvaultServiceCertificate resource interface
 type AzureSubscriptionKeyvaultServiceCertificate interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -20878,7 +20878,7 @@ func (s *mqlAzureSubscriptionKeyvaultServiceCertificate) ComputeVersions() error
 
 // AzureSubscriptionKeyvaultServiceSecret resource interface
 type AzureSubscriptionKeyvaultServiceSecret interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21385,7 +21385,7 @@ func (s *mqlAzureSubscriptionKeyvaultServiceSecret) ComputeVersions() error {
 
 // AzureSubscriptionMonitorService resource interface
 type AzureSubscriptionMonitorService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21709,7 +21709,7 @@ func (s *mqlAzureSubscriptionMonitorService) ComputeApplicationInsights() error 
 
 // AzureSubscriptionMonitorServiceActivitylog resource interface
 type AzureSubscriptionMonitorServiceActivitylog interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -21851,7 +21851,7 @@ func (s *mqlAzureSubscriptionMonitorServiceActivitylog) ComputeAlerts() error {
 
 // AzureSubscriptionMonitorServiceApplicationInsight resource interface
 type AzureSubscriptionMonitorServiceApplicationInsight interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22154,7 +22154,7 @@ func (s *mqlAzureSubscriptionMonitorServiceApplicationInsight) MqlCompute(name s
 
 // AzureSubscriptionMonitorServiceActivitylogAlert resource interface
 type AzureSubscriptionMonitorServiceActivitylogAlert interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22517,7 +22517,7 @@ func (s *mqlAzureSubscriptionMonitorServiceActivitylogAlert) MqlCompute(name str
 
 // AzureSubscriptionMonitorServiceLogprofile resource interface
 type AzureSubscriptionMonitorServiceLogprofile interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -22820,7 +22820,7 @@ func (s *mqlAzureSubscriptionMonitorServiceLogprofile) MqlCompute(name string) e
 
 // AzureSubscriptionMonitorServiceDiagnosticsetting resource interface
 type AzureSubscriptionMonitorServiceDiagnosticsetting interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23063,7 +23063,7 @@ func (s *mqlAzureSubscriptionMonitorServiceDiagnosticsetting) MqlCompute(name st
 
 // AzureSubscriptionCloudDefenderService resource interface
 type AzureSubscriptionCloudDefenderService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23387,7 +23387,7 @@ func (s *mqlAzureSubscriptionCloudDefenderService) ComputeSecurityContacts() err
 
 // AzureSubscriptionCloudDefenderServiceSecurityContact resource interface
 type AzureSubscriptionCloudDefenderServiceSecurityContact interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23630,7 +23630,7 @@ func (s *mqlAzureSubscriptionCloudDefenderServiceSecurityContact) MqlCompute(nam
 
 // AzureSubscriptionAuthorizationService resource interface
 type AzureSubscriptionAuthorizationService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -23810,7 +23810,7 @@ func (s *mqlAzureSubscriptionAuthorizationService) ComputeRoleDefinitions() erro
 
 // AzureSubscriptionAuthorizationServiceRoleDefinition resource interface
 type AzureSubscriptionAuthorizationServiceRoleDefinition interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24083,7 +24083,7 @@ func (s *mqlAzureSubscriptionAuthorizationServiceRoleDefinition) MqlCompute(name
 
 // AzureSubscriptionAuthorizationServiceRoleDefinitionPermission resource interface
 type AzureSubscriptionAuthorizationServiceRoleDefinitionPermission interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24326,7 +24326,7 @@ func (s *mqlAzureSubscriptionAuthorizationServiceRoleDefinitionPermission) MqlCo
 
 // AzureSubscriptionAksService resource interface
 type AzureSubscriptionAksService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -24506,7 +24506,7 @@ func (s *mqlAzureSubscriptionAksService) ComputeClusters() error {
 
 // AzureSubscriptionAksServiceCluster resource interface
 type AzureSubscriptionAksServiceCluster interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -25196,4 +25196,3 @@ func (s *mqlAzureSubscriptionAksServiceCluster) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"azure.subscription.aksService.cluster\" resource")
 	}
 }
-

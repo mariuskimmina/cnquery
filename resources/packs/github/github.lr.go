@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -39,7 +39,7 @@ func Init(registry *resources.Registry) {
 
 // GitCommit resource interface
 type GitCommit interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -282,7 +282,7 @@ func (s *mqlGitCommit) MqlCompute(name string) error {
 
 // GitCommitAuthor resource interface
 type GitCommitAuthor interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -495,7 +495,7 @@ func (s *mqlGitCommitAuthor) MqlCompute(name string) error {
 
 // GitGpgSignature resource interface
 type GitGpgSignature interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -738,7 +738,7 @@ func (s *mqlGitGpgSignature) MqlCompute(name string) error {
 
 // GithubOrganization resource interface
 type GithubOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2136,7 +2136,7 @@ func (s *mqlGithubOrganization) ComputePackages() error {
 
 // GithubUser resource interface
 type GithubUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2784,7 +2784,7 @@ func (s *mqlGithubUser) ComputeGists() error {
 
 // GithubTeam resource interface
 type GithubTeam interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3183,7 +3183,7 @@ func (s *mqlGithubTeam) ComputeRepositories() error {
 
 // GithubCollaborator resource interface
 type GithubCollaborator interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3366,7 +3366,7 @@ func (s *mqlGithubCollaborator) MqlCompute(name string) error {
 
 // GithubPackage resource interface
 type GithubPackage interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3747,7 +3747,7 @@ func (s *mqlGithubPackage) ComputeRepository() error {
 
 // GithubRepository resource interface
 type GithubRepository interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5511,7 +5511,7 @@ func (s *mqlGithubRepository) ComputeLicense() error {
 
 // GithubLicense resource interface
 type GithubLicense interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5724,7 +5724,7 @@ func (s *mqlGithubLicense) MqlCompute(name string) error {
 
 // GithubFile resource interface
 type GithubFile interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6123,7 +6123,7 @@ func (s *mqlGithubFile) ComputeContent() error {
 
 // GithubRelease resource interface
 type GithubRelease interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6336,7 +6336,7 @@ func (s *mqlGithubRelease) MqlCompute(name string) error {
 
 // GithubWebhook resource interface
 type GithubWebhook interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6609,7 +6609,7 @@ func (s *mqlGithubWebhook) MqlCompute(name string) error {
 
 // GithubWorkflow resource interface
 type GithubWorkflow interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6978,7 +6978,7 @@ func (s *mqlGithubWorkflow) ComputeConfiguration() error {
 
 // GithubBranch resource interface
 type GithubBranch interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7329,7 +7329,7 @@ func (s *mqlGithubBranch) ComputeProtectionRules() error {
 
 // GithubBranchprotection resource interface
 type GithubBranchprotection interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7722,7 +7722,7 @@ func (s *mqlGithubBranchprotection) MqlCompute(name string) error {
 
 // GithubCommit resource interface
 type GithubCommit interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8055,7 +8055,7 @@ func (s *mqlGithubCommit) MqlCompute(name string) error {
 
 // GithubMergeRequest resource interface
 type GithubMergeRequest interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8514,7 +8514,7 @@ func (s *mqlGithubMergeRequest) ComputeReviews() error {
 
 // GithubReview resource interface
 type GithubReview interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8727,7 +8727,7 @@ func (s *mqlGithubReview) MqlCompute(name string) error {
 
 // GithubInstallation resource interface
 type GithubInstallation interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8970,7 +8970,7 @@ func (s *mqlGithubInstallation) MqlCompute(name string) error {
 
 // GithubGist resource interface
 type GithubGist interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9273,7 +9273,7 @@ func (s *mqlGithubGist) MqlCompute(name string) error {
 
 // GithubGistfile resource interface
 type GithubGistfile interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9594,7 +9594,7 @@ func (s *mqlGithubGistfile) ComputeContent() error {
 
 // GithubIssue resource interface
 type GithubIssue interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10014,4 +10014,3 @@ func (s *mqlGithubIssue) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"github.issue\" resource")
 	}
 }
-

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -36,7 +36,7 @@ func Init(registry *resources.Registry) {
 
 // Microsoft resource interface
 type Microsoft interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -466,7 +466,7 @@ func (s *mqlMicrosoft) ComputeSettings() error {
 
 // MicrosoftOrganization resource interface
 type MicrosoftOrganization interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -709,7 +709,7 @@ func (s *mqlMicrosoftOrganization) MqlCompute(name string) error {
 
 // MicrosoftUser resource interface
 type MicrosoftUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1480,7 +1480,7 @@ func (s *mqlMicrosoftUser) ComputeSettings() error {
 
 // MicrosoftGroup resource interface
 type MicrosoftGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1801,7 +1801,7 @@ func (s *mqlMicrosoftGroup) ComputeMembers() error {
 
 // MicrosoftDomain resource interface
 type MicrosoftDomain interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2272,7 +2272,7 @@ func (s *mqlMicrosoftDomain) ComputeServiceConfigurationRecords() error {
 
 // MicrosoftDomaindnsrecord resource interface
 type MicrosoftDomaindnsrecord interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2575,7 +2575,7 @@ func (s *mqlMicrosoftDomaindnsrecord) MqlCompute(name string) error {
 
 // MicrosoftApplication resource interface
 type MicrosoftApplication interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2878,7 +2878,7 @@ func (s *mqlMicrosoftApplication) MqlCompute(name string) error {
 
 // MicrosoftServiceprincipal resource interface
 type MicrosoftServiceprincipal interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3001,7 +3001,7 @@ func (s *mqlMicrosoftServiceprincipal) MqlCompute(name string) error {
 
 // MicrosoftSecurity resource interface
 type MicrosoftSecurity interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3191,7 +3191,7 @@ func (s *mqlMicrosoftSecurity) ComputeLatestSecureScores() error {
 
 // MicrosoftSecuritySecurityscore resource interface
 type MicrosoftSecuritySecurityscore interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3614,7 +3614,7 @@ func (s *mqlMicrosoftSecuritySecurityscore) MqlCompute(name string) error {
 
 // MicrosoftPolicies resource interface
 type MicrosoftPolicies interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3900,7 +3900,7 @@ func (s *mqlMicrosoftPolicies) ComputePermissionGrantPolicies() error {
 
 // MicrosoftRolemanagement resource interface
 type MicrosoftRolemanagement interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4042,7 +4042,7 @@ func (s *mqlMicrosoftRolemanagement) ComputeRoleDefinitions() error {
 
 // MicrosoftRolemanagementRoledefinition resource interface
 type MicrosoftRolemanagementRoledefinition interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4423,7 +4423,7 @@ func (s *mqlMicrosoftRolemanagementRoledefinition) ComputeAssignments() error {
 
 // MicrosoftRolemanagementRoleassignment resource interface
 type MicrosoftRolemanagementRoleassignment interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4636,7 +4636,7 @@ func (s *mqlMicrosoftRolemanagementRoleassignment) MqlCompute(name string) error
 
 // MicrosoftDevicemanagement resource interface
 type MicrosoftDevicemanagement interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4826,7 +4826,7 @@ func (s *mqlMicrosoftDevicemanagement) ComputeDeviceCompliancePolicies() error {
 
 // MicrosoftDevicemanagementDeviceconfiguration resource interface
 type MicrosoftDevicemanagementDeviceconfiguration interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5129,7 +5129,7 @@ func (s *mqlMicrosoftDevicemanagementDeviceconfiguration) MqlCompute(name string
 
 // MicrosoftDevicemanagementDevicecompliancepolicy resource interface
 type MicrosoftDevicemanagementDevicecompliancepolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5462,7 +5462,7 @@ func (s *mqlMicrosoftDevicemanagementDevicecompliancepolicy) MqlCompute(name str
 
 // Ms365Exchangeonline resource interface
 type Ms365Exchangeonline interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6074,7 +6074,7 @@ func (s *mqlMs365Exchangeonline) MqlCompute(name string) error {
 
 // Ms365Sharepointonline resource interface
 type Ms365Sharepointonline interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6236,7 +6236,7 @@ func (s *mqlMs365Sharepointonline) MqlCompute(name string) error {
 
 // Ms365Teams resource interface
 type Ms365Teams interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6395,4 +6395,3 @@ func (s *mqlMs365Teams) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"ms365.teams\" resource")
 	}
 }
-

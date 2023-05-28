@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 	"go.mondoo.com/cnquery/resources/packs/core"
 	"go.mondoo.com/cnquery/resources/packs/os"
 )
@@ -54,7 +54,7 @@ func Init(registry *resources.Registry) {
 
 // K8s resource interface
 type K8s interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1252,7 +1252,7 @@ func (s *mqlK8s) ComputeIngresses() error {
 
 // K8sApiresource resource interface
 type K8sApiresource interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1585,7 +1585,7 @@ func (s *mqlK8sApiresource) MqlCompute(name string) error {
 
 // K8sNode resource interface
 type K8sNode interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1924,7 +1924,7 @@ func (s *mqlK8sNode) ComputeAnnotations() error {
 
 // K8sKubelet resource interface
 type K8sKubelet interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2116,7 +2116,7 @@ func (s *mqlK8sKubelet) MqlCompute(name string) error {
 
 // K8sNamespace resource interface
 type K8sNamespace interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2359,7 +2359,7 @@ func (s *mqlK8sNamespace) MqlCompute(name string) error {
 
 // K8sPod resource interface
 type K8sPod interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3049,7 +3049,7 @@ func (s *mqlK8sPod) ComputeNode() error {
 
 // K8sContainer resource interface
 type K8sContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3700,7 +3700,7 @@ func (s *mqlK8sContainer) ComputeContainerImage() error {
 
 // K8sInitContainer resource interface
 type K8sInitContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4291,7 +4291,7 @@ func (s *mqlK8sInitContainer) ComputeContainerImage() error {
 
 // K8sEphemeralContainer resource interface
 type K8sEphemeralContainer interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -4852,7 +4852,7 @@ func (s *mqlK8sEphemeralContainer) ComputeContainerImage() error {
 
 // K8sDeployment resource interface
 type K8sDeployment interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5416,7 +5416,7 @@ func (s *mqlK8sDeployment) ComputeContainers() error {
 
 // K8sDaemonset resource interface
 type K8sDaemonset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -5980,7 +5980,7 @@ func (s *mqlK8sDaemonset) ComputeContainers() error {
 
 // K8sStatefulset resource interface
 type K8sStatefulset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -6544,7 +6544,7 @@ func (s *mqlK8sStatefulset) ComputeContainers() error {
 
 // K8sReplicaset resource interface
 type K8sReplicaset interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7108,7 +7108,7 @@ func (s *mqlK8sReplicaset) ComputeContainers() error {
 
 // K8sJob resource interface
 type K8sJob interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -7672,7 +7672,7 @@ func (s *mqlK8sJob) ComputeContainers() error {
 
 // K8sCronjob resource interface
 type K8sCronjob interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8236,7 +8236,7 @@ func (s *mqlK8sCronjob) ComputeContainers() error {
 
 // K8sSecret resource interface
 type K8sSecret interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -8752,7 +8752,7 @@ func (s *mqlK8sSecret) ComputeCertificates() error {
 
 // K8sPodsecuritypolicy resource interface
 type K8sPodsecuritypolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9181,7 +9181,7 @@ func (s *mqlK8sPodsecuritypolicy) ComputeAnnotations() error {
 
 // K8sConfigmap resource interface
 type K8sConfigmap interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -9649,7 +9649,7 @@ func (s *mqlK8sConfigmap) ComputeAnnotations() error {
 
 // K8sService resource interface
 type K8sService interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10117,7 +10117,7 @@ func (s *mqlK8sService) ComputeAnnotations() error {
 
 // K8sIngressresourceref resource interface
 type K8sIngressresourceref interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10330,7 +10330,7 @@ func (s *mqlK8sIngressresourceref) MqlCompute(name string) error {
 
 // K8sIngressservicebackend resource interface
 type K8sIngressservicebackend interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10543,7 +10543,7 @@ func (s *mqlK8sIngressservicebackend) MqlCompute(name string) error {
 
 // K8sIngressbackend resource interface
 type K8sIngressbackend interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10726,7 +10726,7 @@ func (s *mqlK8sIngressbackend) MqlCompute(name string) error {
 
 // K8sIngresshttprulepath resource interface
 type K8sIngresshttprulepath interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -10939,7 +10939,7 @@ func (s *mqlK8sIngresshttprulepath) MqlCompute(name string) error {
 
 // K8sIngressrule resource interface
 type K8sIngressrule interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11122,7 +11122,7 @@ func (s *mqlK8sIngressrule) MqlCompute(name string) error {
 
 // K8sIngresstls resource interface
 type K8sIngresstls interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11305,7 +11305,7 @@ func (s *mqlK8sIngresstls) MqlCompute(name string) error {
 
 // K8sIngress resource interface
 type K8sIngress interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -11803,7 +11803,7 @@ func (s *mqlK8sIngress) ComputeAnnotations() error {
 
 // K8sNetworkpolicy resource interface
 type K8sNetworkpolicy interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12271,7 +12271,7 @@ func (s *mqlK8sNetworkpolicy) ComputeAnnotations() error {
 
 // K8sServiceaccount resource interface
 type K8sServiceaccount interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -12799,7 +12799,7 @@ func (s *mqlK8sServiceaccount) ComputeAnnotations() error {
 
 // K8sRbacClusterrole resource interface
 type K8sRbacClusterrole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13267,7 +13267,7 @@ func (s *mqlK8sRbacClusterrole) ComputeAnnotations() error {
 
 // K8sRbacRole resource interface
 type K8sRbacRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -13735,7 +13735,7 @@ func (s *mqlK8sRbacRole) ComputeAnnotations() error {
 
 // K8sRbacClusterrolebinding resource interface
 type K8sRbacClusterrolebinding interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14203,7 +14203,7 @@ func (s *mqlK8sRbacClusterrolebinding) ComputeAnnotations() error {
 
 // K8sRbacRolebinding resource interface
 type K8sRbacRolebinding interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -14701,7 +14701,7 @@ func (s *mqlK8sRbacRolebinding) ComputeAnnotations() error {
 
 // K8sCustomresource resource interface
 type K8sCustomresource interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15130,7 +15130,7 @@ func (s *mqlK8sCustomresource) ComputeAnnotations() error {
 
 // K8sAdmissionreview resource interface
 type K8sAdmissionreview interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15272,7 +15272,7 @@ func (s *mqlK8sAdmissionreview) ComputeRequest() error {
 
 // K8sAdmissionrequest resource interface
 type K8sAdmissionrequest interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15563,7 +15563,7 @@ func (s *mqlK8sAdmissionrequest) ComputeUserInfo() error {
 
 // K8sUserinfo resource interface
 type K8sUserinfo interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -15713,4 +15713,3 @@ func (s *mqlK8sUserinfo) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"k8s.userinfo\" resource")
 	}
 }
-

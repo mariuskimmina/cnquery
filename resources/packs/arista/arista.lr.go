@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -28,7 +28,7 @@ func Init(registry *resources.Registry) {
 
 // AristaEos resource interface
 type AristaEos interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -602,7 +602,7 @@ func (s *mqlAristaEos) ComputeNtp() error {
 
 // AristaEosRunningConfig resource interface
 type AristaEosRunningConfig interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -744,7 +744,7 @@ func (s *mqlAristaEosRunningConfig) ComputeContent() error {
 
 // AristaEosRunningConfigSection resource interface
 type AristaEosRunningConfigSection interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -915,7 +915,7 @@ func (s *mqlAristaEosRunningConfigSection) ComputeContent() error {
 
 // AristaEosUser resource interface
 type AristaEosUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1218,7 +1218,7 @@ func (s *mqlAristaEosUser) MqlCompute(name string) error {
 
 // AristaEosRole resource interface
 type AristaEosRole interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1401,7 +1401,7 @@ func (s *mqlAristaEosRole) MqlCompute(name string) error {
 
 // AristaEosSnmpSetting resource interface
 type AristaEosSnmpSetting interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1572,7 +1572,7 @@ func (s *mqlAristaEosSnmpSetting) ComputeNotifications() error {
 
 // AristaEosNtpSetting resource interface
 type AristaEosNtpSetting interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1695,7 +1695,7 @@ func (s *mqlAristaEosNtpSetting) MqlCompute(name string) error {
 
 // AristaEosInterface resource interface
 type AristaEosInterface interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2316,7 +2316,7 @@ func (s *mqlAristaEosInterface) ComputeStatus() error {
 
 // AristaEosIpInterface resource interface
 type AristaEosIpInterface interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2499,7 +2499,7 @@ func (s *mqlAristaEosIpInterface) MqlCompute(name string) error {
 
 // AristaEosStp resource interface
 type AristaEosStp interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2641,7 +2641,7 @@ func (s *mqlAristaEosStp) ComputeMstInstances() error {
 
 // AristaEosStpMst resource interface
 type AristaEosStpMst interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2944,7 +2944,7 @@ func (s *mqlAristaEosStpMst) MqlCompute(name string) error {
 
 // AristaEosSptMstInterface resource interface
 type AristaEosSptMstInterface interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3520,4 +3520,3 @@ func (s *mqlAristaEosSptMstInterface) ComputeFeatures() error {
 	s.Cache.Store("features", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -18,7 +18,7 @@ func Init(registry *resources.Registry) {
 
 // GitlabGroup resource interface
 type GitlabGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -348,7 +348,7 @@ func (s *mqlGitlabGroup) ComputeProjects() error {
 
 // GitlabProject resource interface
 type GitlabProject interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -588,4 +588,3 @@ func (s *mqlGitlabProject) MqlCompute(name string) error {
 		return errors.New("Cannot find field '" + name + "' in \"gitlab.project\" resource")
 	}
 }
-

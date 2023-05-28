@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"go.mondoo.com/cnquery/resources"
 	"github.com/rs/zerolog/log"
+	"go.mondoo.com/cnquery/resources"
 )
 
 // Init all resources into the registry
@@ -24,7 +24,7 @@ func Init(registry *resources.Registry) {
 
 // Slack resource interface
 type Slack interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -262,7 +262,7 @@ func (s *mqlSlack) ComputeConversations() error {
 
 // SlackTeam resource interface
 type SlackTeam interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -484,7 +484,7 @@ func (s *mqlSlackTeam) MqlCompute(name string) error {
 
 // SlackUsers resource interface
 type SlackUsers interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -818,7 +818,7 @@ func (s *mqlSlackUsers) ComputeList() error {
 
 // SlackUser resource interface
 type SlackUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1670,7 +1670,7 @@ func (s *mqlSlackUser) MqlCompute(name string) error {
 
 // SlackEnterpriseUser resource interface
 type SlackEnterpriseUser interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -1913,7 +1913,7 @@ func (s *mqlSlackEnterpriseUser) MqlCompute(name string) error {
 
 // SlackUserGroup resource interface
 type SlackUserGroup interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2444,7 +2444,7 @@ func (s *mqlSlackUserGroup) ComputeMembers() error {
 
 // SlackLogin resource interface
 type SlackLogin interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -2837,7 +2837,7 @@ func (s *mqlSlackLogin) MqlCompute(name string) error {
 
 // SlackConversation resource interface
 type SlackConversation interface {
-	MqlResource() (*resources.Resource)
+	MqlResource() *resources.Resource
 	MqlCompute(string) error
 	Field(string) (interface{}, error)
 	Register(string) error
@@ -3545,4 +3545,3 @@ func (s *mqlSlackConversation) ComputeMembers() error {
 	s.Cache.Store("members", &resources.CacheEntry{Data: vres, Valid: true, Error: err, Timestamp: time.Now().Unix()})
 	return nil
 }
-
