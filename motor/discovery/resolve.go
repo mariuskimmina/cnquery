@@ -16,7 +16,7 @@ import (
 
 	"go.mondoo.com/cnquery/motor/discovery/oci"
 
-	"github.com/cockroachdb/errors"
+	"errors"
 	"github.com/rs/zerolog/log"
 	"go.mondoo.com/cnquery/motor/asset"
 	"go.mondoo.com/cnquery/motor/discovery/aws"
