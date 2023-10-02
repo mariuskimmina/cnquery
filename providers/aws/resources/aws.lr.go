@@ -1605,6 +1605,9 @@ var getDataFields = map[string]func(r plugin.Resource) *plugin.DataRes{
 	"aws.s3.bucket.grant.id": func(r plugin.Resource) *plugin.DataRes {
 		return (r.(*mqlAwsS3BucketGrant).GetId()).ToDataRes(types.String)
 	},
+	"aws.s3.bucket.grant.region": func(r plugin.Resource) *plugin.DataRes {
+		return (r.(*mqlAwsS3BucketGrant).GetRegion()).ToDataRes(types.String)
+	},
 	"aws.s3.bucket.grant.name": func(r plugin.Resource) *plugin.DataRes {
 		return (r.(*mqlAwsS3BucketGrant).GetName()).ToDataRes(types.String)
 	},
@@ -4231,6 +4234,10 @@ var setDataFields = map[string]func(r plugin.Resource, v *llx.RawData) bool {
 		},
 	"aws.s3.bucket.grant.id": func(r plugin.Resource, v *llx.RawData) (ok bool) {
 		r.(*mqlAwsS3BucketGrant).Id, ok = plugin.RawToTValue[string](v.Value, v.Error)
+		return
+	},
+	"aws.s3.bucket.grant.region": func(r plugin.Resource, v *llx.RawData) (ok bool) {
+		r.(*mqlAwsS3BucketGrant).Region, ok = plugin.RawToTValue[string](v.Value, v.Error)
 		return
 	},
 	"aws.s3.bucket.grant.name": func(r plugin.Resource, v *llx.RawData) (ok bool) {
@@ -11263,6 +11270,7 @@ type mqlAwsS3BucketGrant struct {
 	__id string
 	// optional: if you define mqlAwsS3BucketGrantInternal it will be used here
 	Id plugin.TValue[string]
+	Region plugin.TValue[string]
 	Name plugin.TValue[string]
 	Permission plugin.TValue[string]
 	Grantee plugin.TValue[map[string]interface{}]
@@ -11307,6 +11315,10 @@ func (c *mqlAwsS3BucketGrant) MqlID() string {
 
 func (c *mqlAwsS3BucketGrant) GetId() *plugin.TValue[string] {
 	return &c.Id
+}
+
+func (c *mqlAwsS3BucketGrant) GetRegion() *plugin.TValue[string] {
+	return &c.Region
 }
 
 func (c *mqlAwsS3BucketGrant) GetName() *plugin.TValue[string] {

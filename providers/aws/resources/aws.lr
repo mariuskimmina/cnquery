@@ -985,6 +985,8 @@ private aws.s3.bucket @defaults("arn") {
 private aws.s3.bucket.grant @defaults("name permission") {
   // ID of the bucket grant
   id string
+  // region of the bucket grant (region of the bucket)
+  region string
   // Name for the bucket grant
   name string
   // Permission associated with the grant

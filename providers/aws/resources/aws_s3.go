@@ -316,6 +316,7 @@ func (a *mqlAwsS3Bucket) acl() ([]interface{}, error) {
 		mqlBucketGrant, err := CreateResource(a.MqlRuntime, "aws.s3.bucket.grant",
 			map[string]*llx.RawData{
 				"id":         llx.StringData(id),
+				"region":     llx.StringData(a.Location.Data),
 				"name":       llx.StringData(bucketname),
 				"permission": llx.StringData(string(grant.Permission)),
 				"grantee":    llx.MapData(grantee, types.String),
@@ -593,7 +594,7 @@ func (a *mqlAwsS3Bucket) staticWebsiteHosting() (map[string]interface{}, error) 
 }
 
 func (a *mqlAwsS3BucketGrant) id() (string, error) {
-	return a.Id.Data, nil
+	return fmt.Sprintf("%s/%s", a.Region.Data, a.Id.Data), nil
 }
 
 func (a *mqlAwsS3BucketCorsrule) id() (string, error) {
